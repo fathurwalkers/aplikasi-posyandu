@@ -5,6 +5,8 @@ use App\Http\Controllers\BackController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 
+Route::get('/logout', [BackController::class, 'logout'])->name('logout');
+
 Route::group(['prefix' => '/client'], function () {
     Route::get('/', [ClientController::class, 'index'])->name('client-home');
     Route::get('/login', [BackController::class, 'login_client'])->name('login-client');
