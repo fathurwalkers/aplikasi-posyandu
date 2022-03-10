@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style/daftar.css" />
+  <title>Data Akun!</title>
+  <style>
+    .menu-account {
+      width: 100%;
+      padding: 10px 0 5px 0;
+      position: fixed;
+      z-index: 5 !important;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.144);
+    }
+
+    .profile {
+      position: relative;
+      z-index: 1 !important;
+      min-height: 100%;
+      padding: 140px 0 80px 0;
+    }
+
+    .profile .card {
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #gambar1 {
+      width: 200px;
+      height: 200px;
+      margin-left: -10px;
+      margin-top: -3px;
+    }
+
+    .inputImage {
+      visibility: hidden;
+      color: transparent;
+    }
+  </style>
+</head>
+
+<body id="body">
+  <!-- header -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid p-0">
+      <button class="navbar-toggler border-0 shadow-none col-12 d-flex" type="button">
+        <span class="navbar-toggler-icon" id="tujuan"></span>
+        <p class="nabvar-brand me-auto my-auto fw-bold text-white ms-4 text-center col-8">Data Akun</p>
+      </button>
+    </div>
+  </nav>
+  <!-- end of header -->
+
+  <!-- sidebar nav -->
+  <div class="navs col-10" id="navbarNav">
+    <div class="row">
+      <div class="akun-info col-12">
+        <div class="card text-white rounded-0 sidenav">
+          <div class="card-body pb-1 mt-3" id="navbarNav">
+            <img class="card-img-top gambar img-thumbnail rounded-circle" src="img/businessman.png" alt="user" />
+          </div>
+          <div class="card-body mt-3 pt-0 mb-0" id="navbarNav">
+            <p class="card-text mb-0">Awaluddin</p>
+            <p class="card-text mb-2">awalrajab69@gmail.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 text-white mt-3 menu">
+        <ul class="nav flex-column">
+          <li class="nav-item d-flex px-2 aktiv">
+            <i class="fas fa-home my-auto"></i>
+            <a class="nav-link" href="#">Menu Utama</a>
+          </li>
+          <li class="nav-item d-flex px-2">
+            <i class="fas fa-info-circle my-auto"></i>
+            <a class="nav-link" href="#">Bantuan</a>
+          </li>
+          <li class="nav-item d-flex px-2">
+            <i class="fas fa-sign-out-alt my-auto"></i>
+            <a class="nav-link" href="#">Keluar Akun</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- end of sidebar nav -->
+
+  <!-- menu-account -->
+  <section class="menu-account mt-5 bg-white" id="menu-account">
+    <div class="container-fluid px-0">
+      <nav class="nav justify-content-around py-2">
+        <a class="nav-link active" href="data-akun.html"
+          style="color: #0099ff;border-bottom: 2px solid #0099ff;">Profil</a>
+        <a class="nav-link" href="ganti-pass.html">Kata Sandi</a>
+      </nav>
+    </div>
+  </section>
+  <!-- end of menu-account -->
+
+  <!-- change profile -->
+  <section class="profile" id="profile">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h5 class="mb-3">Ubah Profil Akun</h5>
+        </div>
+        <div class="col-12">
+          <form action="">
+            <div class="card border-1 py-2 bg-transparent">
+              <div class="card-body bg-transparent text-center">
+                <img src="img/businessman.png" class="card-img-top" alt="profile" id="gambar1" />
+                <button class="btn col-12 mt-3 text-white"onclick="document.getElementById('photo').click(); return false" style="background-color: #0099ff;">Ubah Foto Profil</button>
+                <input type="file" onchange="readURL(this);"
+                  class="form-control inputImage btn btn-primary text-center px-0" id="photo" accept="image/*"
+                  style="color: transparent; display: none" />
+              </div>
+              <div class="card-body bg-transparent">
+                <p class="card-text">Nama Pengguna</p>
+                <input type="text" class="form-control" value="Awaluddin Rajab" />
+              </div>
+            </div>
+            <div class="mb-2 mt-4">
+              <button class="btn col-12 py-2 rounded-pill text-white" style="background-color: #0099ff;">Simpan</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end of change profile -->
+
+  <!-- background -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- footer -->
+  <footer id="footer1" class="footer1 col-12 fixed-bottom py-2">
+    <ul class="nav justify-content-around text-white">
+      <li class="nav-item">
+        <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="dashboard.html"><i
+            class="fas fa-home my-auto mx-auto"></i>
+          <p class="mb-0">Beranda</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="daftar.html"><i
+            class="fas fa-list my-auto mx-auto"></i>
+          <p class="mb-0">Daftar anak</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="#"><i
+            class="fas fa-users my-auto mx-auto"></i>
+          <p class="mb-0">Data Akun</p>
+        </a>
+      </li>
+    </ul>
+  </footer>
+  <!-- end of footer -->
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/index.js"></script>
+  <!-- image priview using jquery -->
+  <script>
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $("#gambar1").attr("src", e.target.result).width(200).height(200);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+</body>
+
+</html>

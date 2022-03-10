@@ -1,0 +1,163 @@
+/* style untuk tambah anak */
+
+.tambah-anak .title-text {
+  font-size: 20px;
+}
+
+.headerTop {
+  background-color: #38b6ff !important;
+}
+
+.tambah-anak .headerTOp .card-title i {
+  font-size: 30px !important;
+}
+
+input {
+  transition: 0.1s !important;
+}
+input:focus {
+  border-bottom: 2px solid #0099ff !important;
+}
+
+.nama {
+  position: absolute;
+  top: 12px;
+  margin-left: -1.5px;
+  transition: 0.2s;
+  color: #9a9a9a;
+  font-size: 15px;
+}
+
+input:focus ~ .nama {
+  display: none;
+}
+
+input:valid ~ .nama {
+  display: none;
+}
+input[type="date"]:required:invalid::-webkit-datetime-edit {
+  color: transparent;
+}
+
+input[type="date"]:focus::-webkit-datetime-edit {
+  color: black !important;
+}
+
+.gender {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  margin-left: -1.5px;
+  transition: 0.2s;
+  color: #9a9a9a;
+  font-size: 15px;
+}
+
+.tanggal-lahir {
+  position: absolute;
+  top: 61px;
+  left: 0;
+  margin-left: -1.5px;
+  transition: 0.2s;
+  color: #9a9a9a;
+  font-size: 15px;
+}
+
+input[type="date"]:focus ~ .tanggal-lahir {
+  display: none;
+}
+
+input[type="date"]:valid ~ .tanggal-lahir {
+  display: none;
+}
+
+button:focus {
+  border-bottom: #0099ff !important;
+}
+
+/* button:focus ~ .gender {
+  display: none;
+} */
+
+#files {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid black;
+  background: url(../img/businessman.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+}
+
+#files::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url(../img/add-image.png);
+}
+
+#files::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.konten {
+  width: 100px;
+  height: 100px;
+  top: -5px;
+  z-index: -1;
+}
+
+.gambar {
+  z-index: 2;
+  right: 40px;
+  top: 0px;
+  width: 90px;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.514);
+  border-color: #000000a1;
+  border-width: 1px;
+  border-style: solid;
+}
+
+#gambar1 {
+  width: 100px;
+  height: 100px;
+  margin-left: -10px;
+  margin-top: -3px;
+}
+
+.simpan {
+  background-color: #0099ff;
+}
+
+.images {
+  position: relative !important;
+  right: 0px;
+  top: -73px;
+  font-size: 12px;
+  /* background-color: rgba(0, 0, 0, 0.418); */
+  color: rgb(253, 253, 253);
+  z-index: 5;
+  width: 80px;
+  height: 80px;
+}
+
+.images::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.39);
+  width: 140px;
+  height: 80px;
+  position: absolute;
+  right: -20px;
+  top: 23px;
+  z-index: -2;
+}
+
+.inputImage {
+  visibility: hidden;
+  color: transparent;
+}

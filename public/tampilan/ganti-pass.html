@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style/forget.css" />
+    <link rel="stylesheet" href="style/daftar.css" />
+
+    <title>Registrasi</title>
+    <style>
+        .menu-account {
+            width: 100%;
+            padding: 10px 0 5px 0;
+            position: fixed;
+            z-index: 5 !important;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.144);
+        }
+
+        .email {
+            position: absolute;
+            top: 24px;
+            margin-left: -1.5px;
+            transition: 0.2s;
+            color: #9a9a9a;
+        }
+
+        input:focus~.email {
+            transform: translateY(-20px) !important;
+            color: #0099ff;
+            font-size: 12px;
+        }
+
+        input:valid~.email {
+            transform: translateY(-20px) !important;
+            font-size: 12px;
+        }
+
+        .tombol {
+            background-color: #0099ff;
+        }
+
+        .forget {
+        position: relative;
+        z-index: 1 !important;
+        min-height: 100%;
+        padding: 140px 0 80px 0;
+      }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid p-0">
+            <button class="navbar-toggler border-0 shadow-none col-12 d-flex" type="button">
+                <span class="navbar-toggler-icon" id="tujuan"></span>
+                <p class="nabvar-brand me-auto my-auto fw-bold text-white ms-4 text-center col-8">Data Akun</p>
+            </button>
+        </div>
+    </nav>
+    <!-- end of header -->
+
+    <!-- sidebar nav -->
+    <div class="navs col-10" id="navbarNav">
+        <div class="row">
+            <div class="akun-info col-12">
+                <div class="card text-white rounded-0 sidenav">
+                    <div class="card-body pb-1 mt-3" id="navbarNav">
+                        <img class="card-img-top gambar img-thumbnail rounded-circle" src="img/businessman.png"
+                            alt="user" />
+                    </div>
+                    <div class="card-body mt-3 pt-0 mb-0" id="navbarNav">
+                        <p class="card-text mb-0">Awaluddin</p>
+                        <p class="card-text mb-2">awalrajab69@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 text-white mt-3 menu">
+                <ul class="nav flex-column">
+                    <li class="nav-item d-flex px-2 aktiv">
+                        <i class="fas fa-home my-auto"></i>
+                        <a class="nav-link" href="#">Menu Utama</a>
+                    </li>
+                    <li class="nav-item d-flex px-2">
+                        <i class="fas fa-info-circle my-auto"></i>
+                        <a class="nav-link" href="#">Bantuan</a>
+                    </li>
+                    <li class="nav-item d-flex px-2">
+                        <i class="fas fa-sign-out-alt my-auto"></i>
+                        <a class="nav-link" href="#">Keluar Akun</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- end of sidebar nav -->
+
+    <!-- menu-account -->
+    <section class="menu-account mt-5 bg-white" id="menu-account">
+        <div class="container-fluid px-0">
+            <nav class="nav justify-content-around py-2">
+                <a class="nav-link" href="data-akun.html">Profil</a>
+                <a class="nav-link active" href="ganti-pass.html"
+                    style="color: #0099ff;border-bottom: 2px solid #0099ff;">Kata Sandi</a>
+            </nav>
+        </div>
+    </section>
+    <!-- end of menu-account -->
+
+    <!-- lupa password -->
+    <section id="forget" class="forget">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center pt-2">
+                    <i class="fa fa-key mb-3" style="font-size: 30px;"></i>
+                    <h5>Anda akan mendapatkan instruksi untuk mengubah kata sandi di dalam email anda</h5>
+                </div>
+                <div class="col-12">
+                    <form class="mt-4 pt-3 position-relative pb-5">
+                        <div class="mb-0 pb-2">
+                            <input type="email"
+                                class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0" id="akun" autocomplete="off" required value="awalrajab69@gmail.com" />
+                            <label for="akun" class="email">Email</label>
+                        </div>
+                        <button type="submit" class="btn tombol text-white col-12 py-2 rounded-pill mt-1">Ubah Kata
+                            Sandi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- end of lupa password -->
+
+    <!-- background -->
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- footer -->
+    <footer id="footer1" class="footer1 col-12 fixed-bottom py-2">
+        <ul class="nav justify-content-around text-white">
+            <li class="nav-item">
+                <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page"
+                    href="dashboard.html"><i class="fas fa-home my-auto mx-auto"></i>
+                    <p class="mb-0">Beranda</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="daftar.html"><i
+                        class="fas fa-list my-auto mx-auto"></i>
+                    <p class="mb-0">Daftar anak</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="#"><i
+                        class="fas fa-users my-auto mx-auto"></i>
+                    <p class="mb-0">Data Akun</p>
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <!-- end of footer -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

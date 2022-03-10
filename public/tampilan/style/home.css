@@ -1,0 +1,98 @@
+/* style for dashboard */
+
+html {
+  height: 100%;
+}
+body {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+body.active {
+  overflow-y: hidden;
+}
+.navbar {
+  background-color: #38b6ff;
+  /* position: relative !important; */
+  z-index: 4;
+}
+
+.navs {
+  /* margin-left: -30px; */
+  background-color: rgb(255, 255, 255);
+  height: 100vh !important;
+  position: fixed !important;
+  z-index: 10;
+  top: -1px;
+  left: 0;
+}
+
+.navs {
+  margin-left: -1000px;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.navs.active {
+  margin-left: 0px;
+  opacity: 1;
+}
+
+.sidenav {
+  background-color: #38b6ff;
+}
+
+.menu i,
+.menu a {
+  font-size: 19px;
+  color: #38b6ff;
+}
+
+.gambar {
+  width: 70px;
+  height: 70px;
+}
+
+.aktiv {
+  background-color: #38b6ff67;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.322);
+  display: none;
+  z-index: 9;
+}
+.content {
+  position: relative !important;
+  z-index: 3;
+}
+
+.backdrop.active {
+  display: block;
+}
+
+.footer1 {
+  background-color: #38b6ff;
+  z-index: 4;
+}
+
+.kartu {
+  margin-top: 20px !important;
+}
+
+.status-gizi {
+  background-color: rgb(212, 81, 81);
+}
+
+.hitung-gizi {
+  background-color: #51b1b4;
+}
+
+.grafik {
+  background-color: rgb(103, 167, 103);
+}

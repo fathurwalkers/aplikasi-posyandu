@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style/daftar.css" />
+    <title>Hello, world!</title>
+    <style></style>
+  </head>
+  <body id="body">
+    <!-- header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid p-0">
+        <button class="navbar-toggler border-0 shadow-none col-12 d-flex" type="button">
+          <span class="navbar-toggler-icon" id="tujuan"></span>
+          <p class="nabvar-brand me-auto my-auto fw-bold text-white ms-4 text-center col-8">Daftar Anak</p>
+        </button>
+      </div>
+    </nav>
+    <!-- end of header -->
+
+    <!-- sidebar nav -->
+    <div class="navs col-10" id="navbarNav">
+      <div class="row">
+        <div class="akun-info col-12">
+          <div class="card text-white rounded-0 sidenav">
+            <div class="card-body pb-1 mt-3" id="navbarNav">
+              <img class="card-img-top gambar img-thumbnail rounded-circle" src="img/businessman.png" alt="user" />
+            </div>
+            <div class="card-body mt-3 pt-0 mb-0" id="navbarNav">
+              <p class="card-text mb-0">Awaluddin</p>
+              <p class="card-text mb-2">awalrajab69@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-white mt-3 menu">
+          <ul class="nav flex-column">
+            <li class="nav-item d-flex px-2 aktiv">
+              <i class="fas fa-home my-auto"></i>
+              <a class="nav-link" href="#">Menu Utama</a>
+            </li>
+            <li class="nav-item d-flex px-2">
+              <i class="fas fa-info-circle my-auto"></i>
+              <a class="nav-link" href="#">Bantuan</a>
+            </li>
+            <li class="nav-item d-flex px-2">
+              <i class="fas fa-sign-out-alt my-auto"></i>
+              <a class="nav-link" href="#">Keluar Akun</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end of sidebar nav -->
+
+    <!-- daftar anak -->
+    <section id="daftar" class="daftar">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mt-3">
+            <h5 class="">Daftar Anak</h5>
+          </div>
+        </div>
+        <div class="card mt-2">
+          <div class="row g-0">
+            <div class="col-3 text-center d-flex justify-content-center p-3 my-auto">
+              <img src="img/businessman.png" alt="icon" class="childIcon" />
+            </div>
+            <div class="col-6 me-auto py-1 font">
+              <div class="card-body text-decoration-none d-flex p-0 py-1 me-auto">
+                <i class="fa fa-user my-auto px-1"></i>
+                <p class="card-text ms-1">Awaluddin Rajab</p>
+              </div>
+              <div class="card-body text-decoration-none d-flex p-0 me-auto">
+                <i class="fa fa-calendar my-auto px-1"></i>
+                <p class="card-text ms-1">31 10 2019</p>
+              </div>
+              <div class="card-body text-decoration-none d-flex p-0 ms-1">
+                <i class="fa fa-male my-auto"></i>
+                <i class="fa fa-female my-auto"></i>
+                <p class="card-text ms-2">Laki-laki</p>
+              </div>
+            </div>
+            <div class="col-3 px-2 py-1 d-flex flex-column justify-content-between">
+              <button class="btn rounded-3 shadow-none lihat text-white px-1" type="submit" onclick="document.getElementById('views').click(); return false">Lihat</button>
+              <a href="lihat.html" id="views">Lihat</a>
+              <button class="btn btn-danger rounded-3 shadow-none hapus px-1">Hapus</button>
+            </div>
+          </div>
+        </div>
+
+        <a href="tambah-anak.html" class="card-body tambah img-thumbnail rounded-circle text-white">
+          <i class="fa fa-user-plus"></i>
+        </a>
+      </div>
+    </section>
+    <!-- end of daftar -->
+
+    <!-- background -->
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- footer -->
+    <footer id="footer1" class="footer1 col-12 fixed-bottom py-2">
+      <ul class="nav justify-content-around text-white">
+        <li class="nav-item">
+          <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="dashboard.html"
+            ><i class="fas fa-home my-auto mx-auto"></i>
+            <p class="mb-0">Beranda</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="daftar.html"
+            ><i class="fas fa-list my-auto mx-auto"></i>
+            <p class="mb-0">Daftar anak</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="data-akun.html"
+            ><i class="fas fa-users my-auto mx-auto"></i>
+            <p class="mb-0">Data Akun</p>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

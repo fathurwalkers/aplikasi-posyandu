@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Berat Badan Menurut Tinggi Badan</title>
+    <style>
+      .berat-badan {
+        background-color: #38b6ff;
+        z-index: 3;
+      }
+
+      .berat-badan .title-text {
+        font-size: 20px;
+      }
+
+      .berat-badan i {
+        font-size: 19px;
+      }
+
+      .daftar {
+        min-height: 100%;
+        padding: 50px 0 70px 0;
+      }
+
+      .daftar .card {
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.178);
+      }
+
+      .card .childIcon {
+        width: 60px;
+        height: 60px;
+        /* border: 3px solid black; */
+      }
+
+      .profile .card .card-title .card-text {
+        font-size: 17px;
+      }
+
+      .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.226);
+        display: none;
+        z-index: 4 ;
+      }
+
+      .backdrop.active {
+        display: block;
+      }
+
+      .profile i{
+        font-size: 20px;
+      }
+
+      .profile .input{
+        border-bottom: 2px solid rgb(117, 117, 117) !important;
+        transition: .3s;
+      }
+
+      .profile .input:focus{
+        border-bottom: 2px solid #38b6ff !important;
+      }
+
+      .profile .input:valid{
+        border-bottom: 2px solid #38b6ff !important;
+      }
+      
+
+    </style>
+  </head>
+  <body id="body">
+    <!-- header -->
+    <header class="berat-badan fixed-top" id="berat-badan">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 d-flex mx-auto my-auto py-2 headerTop">
+            <a href="hitung-gizi.html" class="card-title text-white mb-0 py-1 my-auto">
+              <i class="fa fa-arrow-left mb-0"></i>
+            </a>
+            <p class="title-text text-white fw-bold my-auto py-1 col-11 text-center">Berat Badan Tinggi Badan</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end of header -->
+
+    <!-- profile -->
+    <section class="profile mt-5 pb-3" id="profile">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 px-1">
+            <form action="">
+
+              <div class="card px-1">
+                <div class="card-body">
+                  <div class="card-title text-center">
+                    <p class="card-text">Awaluddin rajab</p>
+                  </div>
+                  <div class="card-title d-flex justify-content-between mb-0">
+                    <p class="card-text my-auto" style="font-size: 14px; color: #b4b4b4">Jenis Kelamin</p>
+                    <div class="icon">
+                      <i class="fa fa-male my-auto"></i>
+                      <i class="fa fa-female my-auto"></i>
+                    </div>
+                  </div>
+                  <div class="card-title">
+                    <p class="card-text">Laki-Laki</p>
+                  </div>
+                  <div class="card-title d-flex justify-content-between mb-0">
+                    <p class="card-text my-auto" style="font-size: 14px; color: #b4b4b4">Tanggal Lahir</p>
+                    <i class="fa fa-birthday-cake my-auto"></i>
+                  </div>
+                  <div class="card-title">
+                    <p class="card-text">31-08-2021</p>
+                  </div>
+                  <div class="card-title d-flex justify-content-between mb-0">
+                    <p class="card-text my-auto" style="font-size: 14px; color: #b4b4b4">Umur (Bulan)</p>
+                    <i class="fa fa-calendar-week my-auto"></i>
+                  </div>
+                  <div class="card-title">
+                    <p class="card-text">6</p>
+                  </div>
+                  <div class="card-title d-flex justify-content-between mb-0">
+                    <p class="card-text my-auto" style="font-size: 14px; color: #b4b4b4">Berat(kg)</p>
+                    <i class="fa fa-weight my-auto"></i>
+                  </div>
+                  <div class="mb-3 card-title">
+                   <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" required>
+                  </div>
+                  <div class="card-title d-flex justify-content-between mb-0">
+                    <p class="card-text my-auto" style="font-size: 14px; color: #b4b4b4">Tinggi(Cm)</p>
+                    <i class="fa fa-ruler-vertical my-auto"></i>
+                  </div>
+                  <div class="mb-0 card-title">
+                   <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" required>
+                  </div>
+                </div>
+                <div class="card-body text-center px-1">
+                  <button class="btn btn-primary col-12 shadow-none fw-bold py-2 rounded-pill border-0" id="tujuan" style="background-color: #38b6ff;">Hitung Status Gizi Anak</button>
+                </div>
+                <div class="col-12 d-flex justify-content-between mt-1 px-3">
+                  <h5>Z-Score</h5>
+                  <h5>92.5</h5>
+                </div>
+                <div class="col-12 d-flex justify-content-between px-3">
+                  <h5>Status Gizi</h5>
+                  <h5>Gemuk</h5>
+                </div>
+                <div class="col-12 py-3">
+                  <button class="btn btn-danger text-white rounded-pill fw-bold col-12 py-2">Simpan</button>
+                </div>
+              </div>
+              <!-- akhir dari card -->
+            </form>
+            <!-- card -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of profile -->
+    <!-- background -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+body {
+  background-color: #fff;
+  height: 100%;
+}
+
+.login {
+  background-color: #0099ff;
+}
+
+.title {
+  color: #0099ff;
+}
+
+input {
+  transition: 0.1s !important;
+}
+input:focus {
+  border-bottom: 2px solid #0099ff !important;
+}
+
+.gambar {
+  width: 82px;
+  height: 82px;
+  position: absolute;
+  top: 80px;
+}
+
+.email {
+  position: absolute;
+  top: 10px;
+  margin-left: -1.5px;
+  transition: 0.2s;
+  color: #9a9a9a;
+}
+
+.password {
+  position: absolute;
+  top: 62px;
+  margin-left: -1.5px;
+  transition: 0.2s;
+  color: #9a9a9a;
+}
+
+input:focus ~ .email {
+  transform: translateY(-20px) !important;
+  color: #0099ff;
+  font-size: 12px;
+}
+
+input:valid ~ .email {
+  transform: translateY(-20px) !important;
+  font-size: 12px;
+}
+
+input:focus ~ .password {
+  transform: translateY(-20px) !important;
+  color: #0099ff;
+  font-size: 12px;
+}
+
+input:valid ~ .password {
+  transform: translateY(-20px) !important;
+  font-size: 12px;
+}
+
+.mata {
+  position: absolute;
+  top: 58px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mata:hover {
+  color: #0099ff;
+}
+
+input:focus ~ .mata {
+  color: #0099ff;
+}
+
+#hide1 {
+  display: none;
+}
+
+.tombol {
+  background-color: #0099ff;
+}
+
+.forget {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+hr {
+  width: 40px;
+  margin-top: 14px;
+}
+
+.daftar {
+  margin-top: -10px;
+}
+
+.footer {
+  position: relative;
+}
+
+@media screen and (min-width: 1200px) {
+  svg {
+    display: none;
+  }
+}

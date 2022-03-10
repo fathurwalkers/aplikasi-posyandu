@@ -1,0 +1,186 @@
+.icon {
+  font-size: 20px !important;
+  color: white !important;
+}
+
+.header {
+  display: flex;
+}
+
+.regis {
+  background-color: #0099ff;
+}
+.gambar {
+  width: 82px;
+  height: 82px;
+  position: absolute;
+  top: 80px;
+}
+
+input {
+  transition: 0.1s !important;
+}
+input:focus {
+  border-bottom: 2px solid #0099ff !important;
+}
+
+.name {
+  position: absolute;
+  top: 26px;
+  margin-left: -1.5px;
+  transition: 0.2s;
+  color: #9a9a9a;
+}
+
+.ayah {
+  position: absolute;
+  top: 172px;
+  margin-left: -1.5px;
+  transition: 0.2s;
+  color: #9a9a9a;
+}
+
+.ibu {
+  position: absolute;
+  top: 222px;
+  margin-left: -1.5px;
+  transition: 0.2s;
+  color: #9a9a9a;
+}
+
+.nik {
+  position: absolute;
+  top: 272px;
+  margin-left: -1.5px;
+  transition: 0.2s;
+  color: #9a9a9a;
+}
+
+.alamat {
+  position: absolute;
+  top: 320px;
+  margin-left: -1.5px;
+  transition: 0.2s;
+  color: #9a9a9a;
+}
+
+.mata {
+  position: absolute;
+  top: 123px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: black;
+  z-index: 1;
+  display: block !important;
+}
+
+.mata:hover {
+  color: #0099ff;
+}
+
+#hide1 {
+  display: none;
+}
+
+input:focus ~ .mata {
+  color: #0099ff;
+}
+
+.email {
+  position: absolute;
+  top: 74px;
+  margin-left: -1.5px;
+  transition: 0.2s;
+  color: #9a9a9a;
+}
+
+.password {
+  position: absolute;
+  top: 125px;
+  margin-left: -1.5px;
+  transition: 0.2s;
+  color: #9a9a9a;
+}
+
+input:focus ~ .name {
+  transform: translateY(-20px) !important;
+  color: #0099ff;
+  font-size: 12px;
+}
+
+input:valid ~ .name {
+  transform: translateY(-20px) !important;
+  font-size: 12px;
+}
+
+input:focus ~ .ayah {
+  transform: translateY(-20px) !important;
+  color: #0099ff;
+  font-size: 12px;
+}
+
+input:valid ~ .ayah {
+  transform: translateY(-20px) !important;
+  font-size: 12px;
+}
+
+input:focus ~ .ibu {
+  transform: translateY(-20px) !important;
+  color: #0099ff;
+  font-size: 12px;
+}
+
+input:valid ~ .ibu {
+  transform: translateY(-20px) !important;
+  font-size: 12px;
+}
+
+input:focus ~ .alamat {
+  transform: translateY(-20px) !important;
+  color: #0099ff;
+  font-size: 12px;
+}
+
+input:valid ~ .alamat {
+  transform: translateY(-20px) !important;
+  font-size: 12px;
+}
+
+input:focus ~ .nik {
+  transform: translateY(-20px) !important;
+  color: #0099ff;
+  font-size: 12px;
+}
+
+input:valid ~ .nik {
+  transform: translateY(-20px) !important;
+  font-size: 12px;
+}
+
+input:focus ~ .email {
+  transform: translateY(-20px) !important;
+  color: #0099ff;
+  font-size: 12px;
+}
+
+input:valid ~ .email {
+  transform: translateY(-20px) !important;
+  font-size: 12px;
+}
+
+input:focus ~ .password {
+  transform: translateY(-20px) !important;
+  color: #0099ff;
+  font-size: 12px;
+}
+
+input:valid ~ .password {
+  transform: translateY(-20px) !important;
+  font-size: 12px;
+}
+
+.tombol {
+  background-color: #0099ff;
+}

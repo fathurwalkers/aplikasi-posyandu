@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style/daftar.css" />
+    <title>Daftar Makanan</title>
+    <style>
+      html {
+        overflow: hidden;
+      }
+      .daftar-bahan .col-12 {
+        background-color: #38b6ff;
+      }
+
+      .daftar-bahan .title-text {
+        font-size: 20px;
+      }
+
+      .daftar-bahan i {
+        font-size: 19px;
+      }
+
+      .menu .card {
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .menu .card {
+        border: 2px solid #38b6ff;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <!-- header -->
+    <header class="daftar-bahan fixed-top" id="daftar-bahan">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 d-flex mx-auto my-auto py-2 headerTop">
+            <a href="dashboard.html" class="card-title text-white mb-0 py-1 my-auto">
+              <i class="fa fa-arrow-left mb-0"></i>
+            </a>
+            <p class="title-text text-white fw-bold my-auto py-1 col-11 text-center">Daftar Makanan</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end of header -->
+
+    <!-- menu-->
+
+    <section class="menu mt-5 pt-3" id="menu">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <a href="daftar-bahan.html" class="nav-link px-1 text-dark">
+              <div class="card text-center px-0 py-2 bg-white text-dark">
+                <div class="card-title mb-0 display-6 fw-bold p-2">Informasi Daftar Bahan</div>
+                <div class="card-body py-2 px-1">Melihat kandungan gizi bahan makanan</div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12">
+            <a href="info-gizi.html" class="nav-link px-1 text-dark">
+              <div class="card text-center px-0 py-2 text-dark bg-white">
+                <div class="card-title mb-0 display-6 fw-bold p-2">Kebutuhan Gizi</div>
+                <div class="card-body py-3 px-1">Berisi Informasi tentang kebutuhan nutrisi anak sesuai angka kecukupan gizi (AKG)</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end of menu -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

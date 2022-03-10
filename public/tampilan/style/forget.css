@@ -1,0 +1,31 @@
+.lupa {
+    background-color: #0099ff;
+  }
+
+input:focus ~ .mata {
+    color: #0099ff;
+  }
+  
+  .email {
+    position: absolute;
+    top: 24px;
+    margin-left: -1.5px;
+    transition: 0.2s;
+    color: #9a9a9a;
+  }
+
+  input:focus ~ .email {
+    transform: translateY(-20px) !important;
+    color: #0099ff;
+    font-size: 12px;
+  }
+  
+  input:valid ~ .email {
+    transform: translateY(-20px) !important;
+    font-size: 12px;
+  }
+
+  .tombol {
+    background-color: #0099ff;
+  }
+  

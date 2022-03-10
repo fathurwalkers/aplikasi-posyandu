@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Grafik Pertumbuhan Menurut Umur</title>
+    <style>
+      .berat-badan {
+        background-image: linear-gradient(to left, #90d4fc, #38b6ff);
+        z-index: 3;
+      }
+
+      .berat-badan .title-text {
+        font-size: 20px;
+      }
+
+      .berat-badan i {
+        font-size: 19px;
+      }
+
+      .daftar {
+        min-height: 100%;
+        padding: 50px 0 70px 0;
+      }
+
+      .daftar .card {
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.178);
+      }
+
+      .card .childIcon {
+        width: 60px;
+        height: 60px;
+        /* border: 3px solid black; */
+      }
+
+      .profile .card .card-title .card-text {
+        font-size: 17px;
+      }
+
+      .backdrop.active {
+        display: block;
+      }
+
+      .profile i{
+        font-size: 20px;
+      }
+      
+    </style>
+  </head>
+  <body id="body">
+    <!-- header -->
+    <header class="berat-badan fixed-top border-0" id="berat-badan">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 d-flex mx-auto border-0 my-auto py-2 headerTop">
+            <a href="menu-grafik.html" class="card-title text-white mb-0 py-1 my-auto">
+              <i class="fa fa-arrow-left mb-0"></i>
+            </a>
+            <p class="title-text text-white fw-bold my-auto py-1 col-11 text-center">Grafik Pertumbuhan</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end of header -->
+
+    <!-- profile -->
+    <section class="profile mt-5" id="profile">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 px-0">
+            <form action="">
+ 
+              <div class="card px-1 rounded-0 mb-3 border-0" style="background-image: linear-gradient(to left, #90d4fc, #38b6ff);">
+                <div class="card-body">
+                  <div class="card-title text-center text-white fw-bold">
+                    <p class="card-text">Awaluddin rajab</p>
+                  </div>
+                  <div class="card-title d-flex justify-content-between mb-0">
+                    <p class="card-text my-auto" style="font-size: 14px; color: rgba(255, 255, 255, 0.692)">Jenis Kelamin</p>
+                    <div class="icon text-white">
+                      <i class="fa fa-male my-auto"></i>
+                      <i class="fa fa-female my-auto"></i>
+                    </div>
+                  </div>
+                  <div class="card-title fw-bold text-white">
+                    <p class="card-text">Laki-Laki</p>
+                  </div>
+                  <div class="card-title d-flex justify-content-between mb-0">
+                    <p class="card-text my-auto" style="font-size: 14px; color: rgba(255, 255, 255, 0.692)">Tanggal Lahir</p>
+                    <i class="fa fa-birthday-cake my-auto text-white"></i>
+                  </div>
+                  <div class="card-title fw-bold text-white">
+                    <p class="card-text">31-08-2021</p>
+                  </div>
+                </div>
+              </div>
+              <!-- akhir dari card -->
+            </form>
+            <!-- card -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of profile -->
+
+    <!-- grafik -->
+
+    <section class="grafik" id="grafik">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body px-3 py-3">
+                            <div class="chartMenu">
+                                <p class="fw-bold mb-2">Tinggi Badan Menurut Umur</p>
+                            </div>
+                            <div class="message">
+                                <h5 class="text-center text-danger">Data Kosong, Lakukan Pengukuran terlebih dahulu di menu Hitung Gizi !!!!</h5>
+                                <button class="btn col-12 rounded-pill text-white" style="background-color: #0099ff;">Hitung Gizi</button>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end of grafik  -->
+    
+   
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>
