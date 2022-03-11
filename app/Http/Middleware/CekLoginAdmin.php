@@ -7,15 +7,16 @@ use Illuminate\Http\Request;
 
 class CekLoginAdmin
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
-     */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        $cek_users = session('data_login');
+        if ($cek_users == "pengguna") {
+            return redirect()->route('login-admin')->with('status_fail', 'Tidak bisa melakukan login sebagai pengguna. ');
+        } elseif ($cek_users->login_level == "admin") {
+            View::share('users', $cek_users);
+            return $next($request);
+        } else {
+            return redirect()->route('login-admin')->with('status_fail', 'Silahkan login terlebih dahulu!');
+        }
     }
 }
