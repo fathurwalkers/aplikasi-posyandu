@@ -41,8 +41,9 @@
                                         <h1 class=" font-weight-bold text-dark mb-4">Administrator</h1>
                                     </div>
                                     <form class="user" method="POST" action="{{ route('post-login') }}">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Masukkan username anda..." name="login_username">
                                         </div>
@@ -56,9 +57,9 @@
                                                 <label class="custom-control-label" for="customCheck">Ingat Saya</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block col-12">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block col-12">
                                             Login
-                                        </a>
+                                        </button>
                                     </form>
                                     <hr>
                                     <div class="text-center">

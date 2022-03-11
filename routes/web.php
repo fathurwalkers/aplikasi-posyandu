@@ -21,10 +21,10 @@ Route::get('/logout', [BackController::class, 'logout'])->name('logout');
 Route::post('/post-login', [BackController::class, 'post_login'])->name('post-login');
 Route::post('/post-register', [BackController::class, 'post_register'])->name('post-register');
 
-Route::group(['prefix' => '/client', 'middleware' => 'cekloginclient'], function () {
+Route::group(['prefix' => '/client'], function () {
     Route::get('/', [ClientController::class, 'index'])->name('client-home');
 });
 
-Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], function () {
+Route::group(['prefix' => '/dashboard'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin-home');
 });
