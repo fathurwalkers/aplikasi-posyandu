@@ -5,7 +5,10 @@ use App\Http\Controllers\BackController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 
-Route::get('/', [BackController::class, 'login_admin'])->name('login-admin');
+Route::get('/', function () {
+    return redirect()->url('/login');
+});
+Route::get('/login', [BackController::class, 'login_admin'])->name('login-admin');
 Route::get('/logout', [BackController::class, 'logout'])->name('logout');
 
 Route::group(['prefix' => '/client'], function () {
