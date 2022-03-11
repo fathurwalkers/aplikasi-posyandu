@@ -6,8 +6,16 @@
             <i class="fa fa-bars"></i>
         </button>
 
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 py-0">
+                <h4 class="text-dark">
+                    <b>APLIKASI CEK GIZI</b>
+                    </h4>
+            </div>
+        </div>
+
         <!-- Topbar Search -->
-        <form
+        {{-- <form
             class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
                 <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
@@ -18,7 +26,7 @@
                     </button>
                 </div>
             </div>
-        </form>
+        </form> --}}
 
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
@@ -114,7 +122,7 @@
                     </h6>
                     <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                            <img class="rounded-circle" src="{{ asset('tampilan/admin') }}/img/undraw_profile_1.svg"
                                 alt="...">
                             <div class="status-indicator bg-success"></div>
                         </div>
@@ -126,7 +134,7 @@
                     </a>
                     <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                            <img class="rounded-circle" src="{{ asset('tampilan/admin') }}/img/undraw_profile_2.svg"
                                 alt="...">
                             <div class="status-indicator"></div>
                         </div>
@@ -138,7 +146,7 @@
                     </a>
                     <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                            <img class="rounded-circle" src="{{ asset('tampilan/admin') }}/img/undraw_profile_3.svg"
                                 alt="...">
                             <div class="status-indicator bg-warning"></div>
                         </div>
@@ -171,7 +179,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">Vera Wahyuni</span>
-                    <img class="img-profile rounded-circle img-thumbnail" src="img/woman.png" style="background-color: rgba(75, 75, 75, 0.596);">
+                    <img class="img-profile rounded-circle img-thumbnail" src="{{ asset('tampilan/admin') }}/img/woman.png" style="background-color: rgba(75, 75, 75, 0.596);">
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
