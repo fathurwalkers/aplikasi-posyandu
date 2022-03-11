@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class BackController extends Controller
 {
+    protected $users;
+
+    public function __construct()
+    {
+        $this->users = session('data_login');
+    }
 
     public function login_admin()
     {
