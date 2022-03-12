@@ -24,6 +24,7 @@ Route::post('/post-register', [BackController::class, 'post_register'])->name('p
 Route::group(['prefix' => '/client'], function () {
     Route::get('/', [ClientController::class, 'index'])->name('client-home');
     Route::get('/daftar-makanan', [ClientController::class, 'daftar_makanan'])->name('daftar-makanan');
+    Route::get('/daftar-anak', [ClientController::class, 'daftar_anak'])->name('daftar-anak');
 });
 
 Route::group(['prefix' => '/dashboard'], function () {

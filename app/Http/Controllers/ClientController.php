@@ -15,4 +15,9 @@ class ClientController extends Controller
     {
         return view('client.daftar-makanan');
     }
+
+    public function daftar_anak()
+    {
+        return view('client.daftar-anak');
+    }
 }
