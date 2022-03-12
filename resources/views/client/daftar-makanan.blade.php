@@ -30,8 +30,10 @@
 </style>
 @endpush
 
+@section('header-content', 'Daftar Makanan')
+
 @section('main-content')
-    <!-- header -->
+    {{-- <!-- header -->
     <header class="daftar-bahan fixed-top" id="daftar-bahan">
         <div class="container-fluid">
             <div class="row">
@@ -44,7 +46,7 @@
             </div>
         </div>
     </header>
-    <!-- end of header -->
+    <!-- end of header --> --}}
 
     <!-- menu-->
 
