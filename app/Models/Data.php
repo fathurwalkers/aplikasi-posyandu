@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Login;
 
 class Data extends Model
 {
@@ -11,4 +12,9 @@ class Data extends Model
     protected $table = "data_pengguna";
     protected $guarded = [];
     protected $primaryKey = "id";
+
+    public function login()
+    {
+        return $this->hasMany(Login::class);
+    }
 }
