@@ -20,11 +20,19 @@ class BackController extends Controller
 
     public function login_admin()
     {
+        $users = session('data_login');
+        if ($users) {
+            return redirect()->route('admin-home');
+        }
         return view('login');
     }
 
     public function login_client()
     {
+        $users = session('data_login');
+        if ($users) {
+            return redirect()->route('client-home');
+        }
         return view('client.login');
     }
 
