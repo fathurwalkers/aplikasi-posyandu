@@ -53,7 +53,7 @@
             <hr />
           </div> --}}
           <div class="col-12 text-center daftar mt-2">
-            <p>Belum punya akun ? Daftar <a href="registrasi.html">disini</a></p>
+            <p>Belum punya akun ? Daftar <a href="{{ route('register-client') }}">disini</a></p>
           </div>
         </div>
       </div>
