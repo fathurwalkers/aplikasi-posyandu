@@ -51,6 +51,7 @@ class BackController extends Controller
 
     public function post_login(Request $request)
     {
+        $cek_request = $request->cekrequest;
         $cariUser = Login::where('login_username', $request->login_username)->get();
         if ($cariUser->isEmpty()) {
             return back()->with('status', 'Maaf username atau password salah!')->withInput();
@@ -58,15 +59,22 @@ class BackController extends Controller
         $data_login = Login::where('login_username', $request->login_username)->firstOrFail();
         switch ($data_login->login_level) {
             case 'admin':
-                $cek_password = Hash::check($request->login_password, $data_login->login_password);
-                if ($data_login) {
-                    if ($cek_password) {
-                        $users = session(['data_login' => $data_login]);
-                        return redirect()->route('admin-home')->with('status', 'Berhasil Login!');
+                if ($cek_request == "admin") {
+                    $cek_password = Hash::check($request->login_password, $data_login->login_password);
+                    if ($data_login) {
+                        if ($cek_password) {
+                            $users = session(['data_login' => $data_login]);
+                            return redirect()->route('admin-home')->with('status', 'Berhasil Login!');
+                        }
                     }
+                } else {
+                    return redirect()->route('login-admin')->with('status', 'Maaf anda tidak dapat memasukkan akun user pada halaman administrator!');
                 }
                 break;
             case 'pengguna':
+                if ($cek_request !== "client") {
+                    return redirect()->route('login-client')->with('status', 'Maaf anda tidak dapat memasukkan akun user pada halaman administrator!');
+                }
                 $cek_password = Hash::check($request->login_password, $data_login->login_password);
                 if ($data_login) {
                     if ($cek_password) {

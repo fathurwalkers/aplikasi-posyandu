@@ -30,6 +30,9 @@
             <form class="position-relative" action="{{ route('post-login') }}" method="POST">
                 @csrf
               <div class="mb-3">
+
+                <input type="hidden" name="cekrequest" value="client" />
+
                 <input type="text" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0 input" id="login_username" required autocomplete="off" name="login_username"/>
                 <label for="login_username" class="email">Email</label>
               </div>

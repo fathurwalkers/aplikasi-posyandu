@@ -26,6 +26,16 @@
 
     <div class="container">
 
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+            </div>
+        </div>
+
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
@@ -42,6 +52,9 @@
                                     </div>
                                     <form class="user" method="POST" action="{{ route('post-login') }}">
                                         @csrf
+
+                                        <input type="hidden" name="cekrequest" value="admin" />
+
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
