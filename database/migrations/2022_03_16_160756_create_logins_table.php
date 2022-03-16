@@ -6,26 +6,28 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateLoginsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('logins', function (Blueprint $table) {
+        Schema::create('login', function (Blueprint $table) {
             $table->id();
+            $table->string('login_nama')->nullable();
+            $table->string('login_username')->unique()->nullable();
+            $table->string('login_password')->nullable();
+            $table->string('login_email')->unique()->nullable();
+            $table->string('login_telepon')->nullable();
+            $table->string('login_alamat')->nullable();
+            $table->text('login_token')->nullable();
+            $table->string('login_level')->nullable(); // ADMIN - PETUGAS - USER
+            $table->string('login_status')->nullable(); // unverified / verified
+
+            $table->unsignedBigInteger('data_id')->nullable()->default(null);
+            $table->foreign('data_id')->references('id')->on('data_pengguna')->onDelete('cascade');
+
             $table->timestamps();
-        });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::dropIfExists('logins');
+        Schema::dropIfExists('login');
     }
 }
