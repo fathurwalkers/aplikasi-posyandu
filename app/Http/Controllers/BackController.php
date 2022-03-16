@@ -54,7 +54,7 @@ class BackController extends Controller
                 if ($data_login) {
                     if ($cek_password) {
                         $users = session(['data_login' => $data_login]);
-                        return redirect()->route('dashboard')->with('status', 'Berhasil Login!');
+                        return redirect()->route('admin-home')->with('status', 'Berhasil Login!');
                     }
                 }
                 break;
@@ -63,7 +63,7 @@ class BackController extends Controller
                 if ($data_login) {
                     if ($cek_password) {
                         $users = session(['data_login' => $data_login]);
-                        return redirect()->route('dashboard')->with('status', 'Berhasil Login!');
+                        return redirect()->route('client-home')->with('status', 'Berhasil Login!');
                     }
                 }
                 break;
