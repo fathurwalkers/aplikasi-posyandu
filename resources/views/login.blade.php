@@ -62,7 +62,7 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password" name="login_username">
+                                                id="exampleInputPassword" placeholder="Password" name="login_password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
