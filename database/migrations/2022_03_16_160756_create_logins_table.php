@@ -24,6 +24,7 @@ class CreateLoginsTable extends Migration
             $table->foreign('data_id')->references('id')->on('data_pengguna')->onDelete('cascade');
 
             $table->timestamps();
+        });
     }
 
     public function down()

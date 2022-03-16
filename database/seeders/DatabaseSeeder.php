@@ -38,20 +38,45 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now()
         ]);
 
+
+        // VERA
         $token = Str::random(16);
         $role = "admin";
-        $hashPassword = Hash::make('ewit', [
+        $hashPassword = Hash::make('vera', [
             'rounds' => 12,
         ]);
         $hashToken = Hash::make($token, [
             'rounds' => 12,
         ]);
         Login::create([
-            'login_nama' => 'ewit',
-            'login_username' => 'ewit',
+            'login_nama' => 'vera',
+            'login_username' => 'vera',
             'login_password' => $hashPassword,
-            'login_email' => 'yuyun@gmail.com',
-            'login_telepon' => '085342072185',
+            'login_email' => 'vera@gmail.com',
+            'login_telepon' => '083400592841',
+            'login_token' => $hashToken,
+            'login_level' => $role,
+            'login_status' => "verified",
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+
+        // ADMINISTRATOR
+        $token = Str::random(16);
+        $role = "admin";
+        $hashPassword = Hash::make('admin', [
+            'rounds' => 12,
+        ]);
+        $hashToken = Hash::make($token, [
+            'rounds' => 12,
+        ]);
+        Login::create([
+            'login_nama' => 'Administrator',
+            'login_username' => 'admin',
+            'login_password' => $hashPassword,
+            'login_email' => 'administrator@gmail.com',
+            'login_telepon' => '082205050352',
             'login_token' => $hashToken,
             'login_level' => $role,
             'login_status' => "verified",
