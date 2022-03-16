@@ -21,12 +21,12 @@ Route::get('/logout', [BackController::class, 'logout'])->name('logout');
 Route::post('/post-login', [BackController::class, 'post_login'])->name('post-login');
 Route::post('/post-register', [BackController::class, 'post_register'])->name('post-register');
 
-Route::group(['prefix' => '/client'], function () {
+Route::group(['prefix' => '/client', 'middleware' => 'cekloginclient'], function () {
     Route::get('/', [ClientController::class, 'index'])->name('client-home');
     Route::get('/daftar-makanan', [ClientController::class, 'daftar_makanan'])->name('daftar-makanan');
     Route::get('/daftar-anak', [ClientController::class, 'daftar_anak'])->name('daftar-anak');
 });
 
-Route::group(['prefix' => '/dashboard'], function () {
+Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin-home');
 });
