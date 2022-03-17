@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Blank Page &mdash; Stisla</title>
+  <title>@yield('title')</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -12,44 +12,57 @@
   <!-- CSS Libraries -->
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="{{ asset('stisla') }}/assets/css/style.css">
-  <link rel="stylesheet" href="{{ asset('stisla') }}/assets/css/components.css">
+  <link rel="stylesheet" href="{{ asset('stisla/assets') }}/css/style.css">
+  <link rel="stylesheet" href="{{ asset('stisla/assets') }}/css/components.css">
   <style>
     .modal-backdrop.show {
         display: none !important;
     }
   </style>
+  @stack('css')
 </head>
 
 <body>
-    <div id="app">
-        <div class="main-wrapper">
-        <div class="navbar-bg"></div>
-        <x-dashboard-panel-navigasi />
+  <div id="app">
+    <div class="main-wrapper">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <x-dashboard-search-panel />
+        <ul class="navbar-nav navbar-right ml-auto">
+          {{-- <x-dashboard-pesan /> --}}
+          {{-- <x-dashboard-notifikasi /> --}}
+          <x-dashboard-user-panel />
+        </ul>
+      </nav>
+      <div class="main-sidebar">
+        <x-dashboard-navbar />
+      </div>
 
-        <x-dashboard-sidebar />
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1 class="mr-auto">@yield('content-header')</h1>
+            @yield('content-header-button')
+          </div>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <section class="section">
-            <div class="section-header">
-                <h1>Blank Page</h1>
-            </div>
-
-            <div class="section-body">
-            </div>
-            </section>
+          <div class="section-body">
+              {{-- <div class="container"> --}}
+                  @yield('content-body')
+              {{-- </div> --}}
+          </div>
+        </section>
+      </div>
+      {{-- <footer class="main-footer">
+        <div class="footer-left">
+          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
         </div>
-        <footer class="main-footer">
-            <div class="footer-left">
-            Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
-            </div>
-            <div class="footer-right">
-            2.3.0
-            </div>
-        </footer>
+        <div class="footer-right">
+          2.3.0
         </div>
+      </footer> --}}
     </div>
+  </div>
 
   <!-- General JS Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -57,13 +70,15 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="{{ asset('stisla') }}/assets/js/stisla.js"></script>
+  <script src="{{ asset('stisla/assets') }}/js/stisla.js"></script>
 
   <!-- JS Libraies -->
 
   <!-- Template JS File -->
-  <script src="{{ asset('stisla') }}/assets/js/scripts.js"></script>
-  <script src="{{ asset('stisla') }}/assets/js/custom.js"></script>
+  <script src="{{ asset('stisla/assets') }}/js/scripts.js"></script>
+  <script src="{{ asset('stisla/assets') }}/js/custom.js"></script>
+
+  @stack('js')
 
   <!-- Page Specific JS File -->
 </body>
