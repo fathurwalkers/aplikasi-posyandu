@@ -35,7 +35,7 @@
         </ul>
       </nav>
       <div class="main-sidebar">
-        <x-dashboard-navbar />
+        <x-dashboard-navigasi-bar />
       </div>
 
       <!-- Main Content -->
