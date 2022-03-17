@@ -9,13 +9,15 @@ Route::get('/', function () {
     return redirect()->route('login-admin');
 });
 
+// LOGOUT Route
+Route::post('/logout', [BackController::class, 'logout'])->name('logout');
+
 // Client Auth
 Route::get('/login-client', [BackController::class, 'login_client'])->name('login-client');
 Route::get('/register-client', [BackController::class, 'register_client'])->name('register-client');
 
 // Administrator Auth
 Route::get('/login-admin', [BackController::class, 'login_admin'])->name('login-admin');
-Route::get('/logout', [BackController::class, 'logout'])->name('logout');
 
 // Authentication
 Route::post('/post-login', [BackController::class, 'post_login'])->name('post-login');
