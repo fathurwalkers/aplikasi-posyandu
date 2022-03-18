@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AnakController;
+use App\Http\Controllers\MakananController;
+use App\Http\Controllers\BalitaController;
 use App\Http\Controllers\ClientController;
 
 Route::get('/', function () {
@@ -27,15 +30,24 @@ Route::group(['prefix' => '/client', 'middleware' => 'cekloginclient'], function
     Route::get('/', [ClientController::class, 'index'])->name('client-home');
 
     // Makanan Route
-    Route::get('/daftar-makanan', [ClientController::class, 'daftar_makanan'])->name('daftar-makanan');
+    Route::get('/daftar-makanan', [ClientController::class, 'daftar_makanan'])->name('client-daftar-makanan');
 
     // Anak Route
-    Route::get('/daftar-anak', [ClientController::class, 'daftar_anak'])->name('daftar-anak');
+    Route::get('/daftar-anak', [ClientController::class, 'daftar_anak'])->name('client-daftar-anak');
 
     // Balita Route
-    Route::get('/daftar-balita', [ClientController::class, 'daftar_balita'])->name('daftar-balita');
+    Route::get('/daftar-balita', [ClientController::class, 'daftar_balita'])->name('client-daftar-balita');
 });
 
 Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin-home');
+
+    // Makanan Route
+    Route::get('/daftar-makanan', [MakananController::class, 'daftar_makanan'])->name('admin-daftar-makanan');
+
+    // Anak Route
+    Route::get('/daftar-anak', [AnakController::class, 'daftar_anak'])->name('admin-daftar-anak');
+
+    // Balita Route
+    Route::get('/daftar-balita', [BalitaController::class, 'daftar_balita'])->name('admin-daftar-balita');
 });
