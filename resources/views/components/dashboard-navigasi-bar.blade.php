@@ -62,20 +62,28 @@
               </ul>
             </li> --}}
 
-            <li class="menu-header">Menu Kelola</li>
+            <li class="menu-header">Kelola Data</li>
 
             <li class="nav-item dropdown">
               <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Kelola Data</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="#"> Data Anak </a></li>
                 <li><a class="nav-link" href="#"> Data Balita </a></li>
-                <li><a class="nav-link" href="#"> Grafik Pertumbuhan</a></li>
-                <li><a class="nav-link" href="#"> Status Gizi</a></li>
                 <li><a class="nav-link" href="#"> Laporan </a></li>
               </ul>
             </li>
 
-            {{-- <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Pengaturan</span></a></li> --}}
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Kelola Makanan</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="#"> Data Makanan Sehat </a></li>
+              </ul>
+            </li>
+
+            <li class="menu-header">Menu Lain</li>
+
+            <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Grafik Pertumbuhan</span></a></li>
+            <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Status Gizi</span></a></li>
           </ul>
 
           {{-- <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
