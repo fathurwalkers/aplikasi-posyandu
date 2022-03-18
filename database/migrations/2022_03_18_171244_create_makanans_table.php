@@ -10,6 +10,12 @@ class CreateMakanansTable extends Migration
     {
         Schema::create('makanan', function (Blueprint $table) {
             $table->id();
+            $table->string('makanan_gambar')->nullable();
+            $table->string('makanan_nama')->nullable();
+            $table->integer('makanan_kalori')->nullable();
+            $table->float('makanan_karbohidrat')->nullable();
+            $table->float('makanan_lemak')->nullable();
+            $table->integer('makanan_protein')->nullable();
             $table->timestamps();
         });
     }
