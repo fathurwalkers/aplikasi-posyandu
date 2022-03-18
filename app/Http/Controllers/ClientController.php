@@ -25,4 +25,9 @@ class ClientController extends Controller
     {
         return view('client.daftar-anak');
     }
+
+    public function daftar_balita()
+    {
+        return view('client.daftar-balita');
+    }
 }

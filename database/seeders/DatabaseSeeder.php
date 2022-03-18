@@ -113,7 +113,7 @@ class DatabaseSeeder extends Seeder
         // User Pertama
         $token = Str::random(16);
         $role = "pengguna";
-        $hashPassword = Hash::make('user1234', [
+        $hashPassword = Hash::make('user1', [
             'rounds' => 12,
         ]);
         $hashToken = Hash::make($token, [

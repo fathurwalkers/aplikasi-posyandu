@@ -1,6 +1,6 @@
 @extends('layouts.client-layouts')
 
-@section('title', 'Daftar Anak - Dashboard')
+@section('title', 'Daftar Balita - Dashboard')
 
 @push('css')
 <link rel="stylesheet" href="{{ asset('tampilan') }}/style/daftar.css" />
@@ -31,7 +31,7 @@
 </style>
 @endpush
 
-@section('header-content', 'Daftar Anak')
+@section('header-content', 'Daftar Balita')
 
 @section('main-content')
     <!-- header -->
