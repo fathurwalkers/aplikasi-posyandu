@@ -13,8 +13,8 @@ Route::get('/', function () {
 Route::post('/logout', [BackController::class, 'logout'])->name('logout');
 
 // Client Auth
-Route::get('/login-client', [BackController::class, 'login_client'])->name('login-client');
-Route::get('/register-client', [BackController::class, 'register_client'])->name('register-client');
+Route::get('/login', [BackController::class, 'login_client'])->name('login-client');
+Route::get('/register', [BackController::class, 'register_client'])->name('register-client');
 
 // Administrator Auth
 Route::get('/login-admin', [BackController::class, 'login_admin'])->name('login-admin');
@@ -25,8 +25,15 @@ Route::post('/post-register', [BackController::class, 'post_register'])->name('p
 
 Route::group(['prefix' => '/client', 'middleware' => 'cekloginclient'], function () {
     Route::get('/', [ClientController::class, 'index'])->name('client-home');
+
+    // Makanan Route
     Route::get('/daftar-makanan', [ClientController::class, 'daftar_makanan'])->name('daftar-makanan');
+
+    // Anak Route
     Route::get('/daftar-anak', [ClientController::class, 'daftar_anak'])->name('daftar-anak');
+
+    // Balita Route
+    Route::get('/daftar-balita', [ClientController::class, 'daftar_balita'])->name('daftar-balita');
 });
 
 Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], function () {
