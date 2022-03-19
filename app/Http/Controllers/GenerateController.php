@@ -101,7 +101,7 @@ class GenerateController extends Controller
         $random_digit                   = $faker->numberBetween(1,2);
         $random_float1                  = $faker->randomFloat($random_digit, 1, 10);
         $random_float2                  = $faker->randomFloat($random_digit, 1, 10);
-        for ($i=0; $i < 2; $i++) {
+        for ($i=0; $i < 40; $i++) {
             $makanan                    = new Makanan;
             $save_makanan = $makanan->create([
                 'makanan_gambar'        => $makanan_gambar,
