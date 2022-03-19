@@ -69,11 +69,11 @@ class GenerateController extends Controller
             $token                      = Hash::make($token_raw, [
                 'rounds' => 12,
             ]);
-            $level                      = "customer";
+            $level                      = "pengguna";
             $login_status               = "verified";
             $login_data = $login_model->create([
                 'login_nama'            => $save_data->data_nama_lengkap,
-                'login_username'        => 'customer' . $i . strtolower(Str::random(5)),
+                'login_username'        => strtolower(Str::random(5)),
                 'login_password'        => $hashPassword,
                 'login_email'           => $faker->email(),
                 'login_telepon'         => $faker->phoneNumber(),
