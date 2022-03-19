@@ -12,8 +12,10 @@ class CreateDataTable extends Migration
             $table->id();
             $table->string('data_foto')->nullable();
             $table->string('data_nama_lengkap')->nullable();
+            $table->string('data_nama_orang_tua')->nullable();
             $table->string('data_alamat_lengkap')->nullable();
             $table->string('data_jenis_kelamin')->nullable();
+            $table->string('data_tipe')->nullable(); // BALITA / ANAK
             $table->integer('data_umur')->nullable(); // BULAN
             $table->timestamps();
         });

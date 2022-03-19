@@ -41,6 +41,7 @@ class GenerateController extends Controller
             $save_data = $data->create([
                 "data_foto" => $data_foto,
                 "data_nama_lengkap" => $nama_lengkap,
+                "data_nama_orang_tua" => $faker->name(),
                 "data_alamat_lengkap" => $faker->address(),
                 "data_jenis_kelamin" => $random_jenis_kelamin,
                 "data_umur" => $faker->numberBetween(6,48),
@@ -111,15 +112,12 @@ class GenerateController extends Controller
             $save_hasil_pemeriksaan->data()->associate($random_data["id"]);
             $save_hasil_pemeriksaan->save();
         }
-        $result = Hasilpemeriksaan::all();
-        dd($result);
     }
 
     public function chained_generate()
     {
         $this->generate_data();
         $this->generate_hasil_pemeriksaan();
-        die;
         return redirect()->route('admin-home')->with('status', 'Berhasil generate Data!');
     }
 }
