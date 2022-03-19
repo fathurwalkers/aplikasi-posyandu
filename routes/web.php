@@ -33,6 +33,7 @@ Route::group(['prefix' => '/client', 'middleware' => 'cekloginclient'], function
 
     // Makanan Route
     Route::get('/menu-makanan', [ClientController::class, 'menu_makanan'])->name('client-menu-makanan');
+    Route::get('/info-gizi', [ClientController::class, 'info_gizi'])->name('client-info-gizi');
 
     // Anak Route
     Route::get('/daftar-anak', [ClientController::class, 'daftar_anak'])->name('client-daftar-anak');

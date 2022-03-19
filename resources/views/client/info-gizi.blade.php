@@ -1,111 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.client-layouts')
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+@section('title', 'Beranda - Dashboard')
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
-    <title>daftar-bahan</title>
+@push('css')
+    <link rel="stylesheet" href="{{ asset('tampilan') }}/style/daftar.css" />
     <style>
-        .daftar-bahan .col-12 {
-            background-color: #38b6ff;
-        }
-        
-        .daftar-bahan .title-text {
-            font-size: 20px;
-        }
-        
-        .daftar-bahan i {
-            font-size: 19px;
-        }
-        
-        .pencarian {
-            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
-        }
-        
-        .card {
-            box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
-        }
-        
-        thead tr:last-child th {
-            border-bottom: 1px solid black;
-        }
-        
-        td {
-            font-size: 14px;
-        }
-        /* .table > :not(:last-child) > :last-child > * {
-        border-bottom-color: transparent !important;
-        border-bottom-style: solid !important ;
-        border-bottom-width: 1px !important ;
-      } */
-        
-        input:focus {
-            border-bottom: 2px solid #0099ff !important;
-        }
-        
-        .search {
-            top: 10px;
-            transition: 0.2s;
-            color: #9a9a9a;
-        }
-        
-        input:focus~.search {
-            transform: translateY(-18px) !important;
-            color: #0099ff;
-            font-size: 12px;
-        }
-        
-        input:focus~.fa {
-            color: #0099ff !important;
-        }
-        
-        input:valid~.search {
-            transform: translateY(-18px) !important;
-            font-size: 12px;
-        }
-        
-        .list table {
-            color: rgb(46, 46, 46);
-        }
-        
-        .list table thead th {
-            background-color: #0099ff;
-            color: white;
-        }
-        
-        .list table tbody tr:nth-child(odd) {
-            background-color: #a5dbfa;
-        }
-        
-        .list table tbody tr:nth-child(even) {
-            background-color: #a5d4f391;
-        }
-    </style>
-</head>
+            .daftar-bahan .col-12 {
+                background-color: #38b6ff;
+            }
 
-<body>
-    <!-- header -->
+            .daftar-bahan .title-text {
+                font-size: 20px;
+            }
+
+            .daftar-bahan i {
+                font-size: 19px;
+            }
+
+            .pencarian {
+                box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+            }
+
+            .card {
+                box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
+            }
+
+            thead tr:last-child th {
+                border-bottom: 1px solid black;
+            }
+
+            td {
+                font-size: 14px;
+            }
+            /* .table > :not(:last-child) > :last-child > * {
+            border-bottom-color: transparent !important;
+            border-bottom-style: solid !important ;
+            border-bottom-width: 1px !important ;
+        } */
+
+            input:focus {
+                border-bottom: 2px solid #0099ff !important;
+            }
+
+            .search {
+                top: 10px;
+                transition: 0.2s;
+                color: #9a9a9a;
+            }
+
+            input:focus~.search {
+                transform: translateY(-18px) !important;
+                color: #0099ff;
+                font-size: 12px;
+            }
+
+            input:focus~.fa {
+                color: #0099ff !important;
+            }
+
+            input:valid~.search {
+                transform: translateY(-18px) !important;
+                font-size: 12px;
+            }
+
+            .list table {
+                color: rgb(46, 46, 46);
+            }
+
+            .list table thead th {
+                background-color: #0099ff;
+                color: white;
+            }
+
+            .list table tbody tr:nth-child(odd) {
+                background-color: #a5dbfa;
+            }
+
+            .list table tbody tr:nth-child(even) {
+                background-color: #a5d4f391;
+            }
+    </style>
+@endpush
+
+@section('header-content', 'Info Kebutuhan Gizi')
+
+@section('header-content-back')
     <header class="daftar-bahan fixed-top" id="daftar-bahan">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 d-flex mx-auto my-auto headerTop">
-                    <a href="daftar-makanan.html" class="card-title text-white mb-0 py-1 my-auto">
+                <div class="col-12 d-flex mx-auto my-auto py-2 headerTop">
+                    <a href="{{ route('client-menu-makanan') }}" class="card-title text-white mb-0 py-1 my-auto">
                         <i class="fa fa-arrow-left mb-0"></i>
                     </a>
-                    <p class="title-text text-white fw-bold my-auto py-2 col-11 text-center">Daftar Bahan</p>
+                    <p class="title-text text-white fw-bold my-auto py-1 col-11 text-center">@yield('header-content')</p>
                 </div>
             </div>
         </div>
     </header>
-    <!-- akhir dari header -->
+@endsection
 
-    <section class="list pt-5 mt-4 pb-3" id="list">
+@section('main-content')
+    <!-- header -->
+    {{-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid p-0">
+          <button class="navbar-toggler border-0 shadow-none col-12 d-flex" type="button">
+            <span class="navbar-toggler-icon" id="tujuan"></span>
+            <p class="nabvar-brand me-auto my-auto fw-bold text-white ms-4 col-8">Cek Gizi Online</p>
+          </button>
+        </div>
+    </nav> --}}
+      <!-- end of header -->
+
+      <!-- sidebar nav -->
+      <x-client-sidebar />
+      <!-- end of sidebar nav -->
+
+      <!-- konten menu -->
+    <section class="list pt-5 mt-4 pb-3 mb-5" id="list">
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-3">
@@ -425,7 +436,7 @@
                 </div>
                 <!-- akhir dari colomn card -->
                 <!-- card -->
-                <div class="col-12">
+                <div class="col-12 mb-5">
                     <div class="card mt-4">
                         <div class="card-body">
                             <table class="table">
@@ -487,8 +498,6 @@
         </div>
     </section>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
-
-</html>
+    <!-- background -->
+    <div class="backdrop" id="backdrop"></div>
+@endsection

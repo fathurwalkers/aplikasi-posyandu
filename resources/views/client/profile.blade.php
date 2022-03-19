@@ -103,7 +103,7 @@
                 </div>
                 <div class="col-12">
                     <form action="">
-                        <div class="card border-1 py-2 bg-transparent">
+                        <div class="card border-1 py-1 bg-transparent">
                         <div class="card-body bg-transparent text-center">
                             <img src="{{ asset('default-img') }}/{{ $users->data->data_foto }}" class="card-img-top" alt="profile" id="gambar1" />
                             <button class="btn col-12 mt-3 text-white"onclick="document.getElementById('photo').click(); return false" style="background-color: #0099ff;">Ubah Foto Profil</button>

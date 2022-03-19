@@ -77,7 +77,7 @@
                     </a>
                 </div>
                 <div class="col-12">
-                    <a href="info-gizi.html" class="nav-link px-1 text-dark">
+                    <a href="{{ route('client-info-gizi') }}" class="nav-link px-1 text-dark">
                         <div class="card text-center px-0 py-2 text-dark bg-white">
                             <div class="card-title mb-0 display-6 fw-bold p-2">Kebutuhan Gizi</div>
                             <div class="card-body py-3 px-1">Berisi Informasi tentang kebutuhan nutrisi anak sesuai angka kecukupan gizi (AKG)</div>

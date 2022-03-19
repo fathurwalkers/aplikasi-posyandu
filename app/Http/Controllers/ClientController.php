@@ -26,6 +26,11 @@ class ClientController extends Controller
         ]);
     }
 
+    public function info_gizi()
+    {
+        return view('client.info-gizi');
+    }
+
     public function menu_makanan()
     {
         return view('client.menu-makanan');
