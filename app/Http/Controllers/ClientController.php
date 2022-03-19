@@ -18,6 +18,14 @@ class ClientController extends Controller
         return view('client.index');
     }
 
+    public function profile()
+    {
+        $users = session('data_login');
+        return view('client.profile', [
+            'users' => $users
+        ]);
+    }
+
     public function menu_makanan()
     {
         return view('client.menu-makanan');

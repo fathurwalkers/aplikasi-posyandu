@@ -73,7 +73,7 @@ class GenerateController extends Controller
             $login_status               = "verified";
             $login_data = $login_model->create([
                 'login_nama'            => $save_data->data_nama_lengkap,
-                'login_username'        => 'customer' . $i . strtoupper(Str::random(5)),
+                'login_username'        => 'customer' . $i . strtolower(Str::random(5)),
                 'login_password'        => $hashPassword,
                 'login_email'           => $faker->email(),
                 'login_telepon'         => $faker->phoneNumber(),

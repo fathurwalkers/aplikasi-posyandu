@@ -33,6 +33,21 @@
 
 @section('header-content', 'Daftar Anak')
 
+@section('header-content-back')
+    <header class="daftar-bahan fixed-top" id="daftar-bahan">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex mx-auto my-auto py-2 headerTop">
+                    <a href="{{ route('client-home') }}" class="card-title text-white mb-0 py-1 my-auto">
+                        <i class="fa fa-arrow-left mb-0"></i>
+                    </a>
+                    <p class="title-text text-white fw-bold my-auto py-1 col-11 text-center">@yield('header-content')</p>
+                </div>
+            </div>
+        </div>
+    </header>
+@endsection
+
 @section('main-content')
     <!-- header -->
     {{-- <header class="daftar-bahan fixed-top" id="daftar-bahan">

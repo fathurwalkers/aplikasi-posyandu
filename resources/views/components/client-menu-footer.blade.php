@@ -8,13 +8,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="daftar.html"
+            <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="{{ route('client-daftar-anak') }}"
               ><i class="fas fa-list my-auto mx-auto"></i>
               <p class="mb-0">Daftar anak</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="data-akun.html"
+            <a class="nav-link active text-white py-0 d-flex flex-column" aria-current="page" href="{{ route('client-profile') }}"
               ><i class="fas fa-users my-auto mx-auto"></i>
               <p class="mb-0">Data Akun</p>
             </a>

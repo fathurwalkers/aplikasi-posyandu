@@ -29,6 +29,7 @@ Route::post('/post-register', [BackController::class, 'post_register'])->name('p
 
 Route::group(['prefix' => '/client', 'middleware' => 'cekloginclient'], function () {
     Route::get('/', [ClientController::class, 'index'])->name('client-home');
+    Route::get('/profile', [ClientController::class, 'profile'])->name('client-profile');
 
     // Makanan Route
     Route::get('/menu-makanan', [ClientController::class, 'menu_makanan'])->name('client-menu-makanan');
