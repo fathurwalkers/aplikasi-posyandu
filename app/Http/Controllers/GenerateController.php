@@ -18,7 +18,7 @@ class GenerateController extends Controller
     public function generate_data()
     {
         $faker                  = Faker::create('id_ID');
-        for ($i=0; $i < 5; $i++) {
+        for ($i=0; $i < 25; $i++) {
             $arr_jenis_kelamin  = ["L", "P"];
             $arr_number  = [1, 2];
             $random_number = Arr::random($arr_number);

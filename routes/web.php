@@ -7,6 +7,7 @@ use App\Http\Controllers\AnakController;
 use App\Http\Controllers\MakananController;
 use App\Http\Controllers\BalitaController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\GenerateController;
 
 Route::get('/', function () {
     return redirect()->route('login-admin');
@@ -50,4 +51,8 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], functi
 
     // Balita Route
     Route::get('/daftar-balita', [BalitaController::class, 'daftar_balita'])->name('admin-daftar-balita');
+});
+
+Route::group(['prefix' => '/generate'], function () {
+    Route::get('/generate-data', [GenerateController::class, 'generate_data'])->name('generate-data');
 });
