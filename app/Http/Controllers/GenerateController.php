@@ -90,8 +90,8 @@ class GenerateController extends Controller
             $random_data = Arr::random($data);
             $random_number = Arr::random($arr_number);
             $random_digit = $faker->numberBetween(1,2);
-            $random_float_berat = $faker->randomFloat($random_gigit, 1, 10);
-            $random_float_tinggi = $faker->randomFloat($random_gigit, 1, 10);
+            $random_float_berat = $faker->randomFloat($random_digit, 1, 10);
+            $random_float_tinggi = $faker->randomFloat($random_digit, 1, 10);
 
             $hasil_berat = $random_float_berat * 2;
             $hasil_tinggi = $random_float_tinggi * 2;
@@ -119,6 +119,7 @@ class GenerateController extends Controller
     {
         $this->generate_data();
         $this->generate_hasil_pemeriksaan();
+        die;
         return redirect()->route('admin-home')->with('status', 'Berhasil generate Data!');
     }
 }
