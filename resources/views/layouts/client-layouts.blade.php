@@ -17,18 +17,8 @@
   </head>
   <body id="body">
         <!-- header -->
-        <header class="daftar-bahan fixed-top" id="daftar-bahan">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 d-flex mx-auto my-auto py-2 headerTop">
-                        <a href="{{ route('client-home') }}" class="card-title text-white mb-0 py-1 my-auto">
-                            <i class="fa fa-arrow-left mb-0"></i>
-                        </a>
-                        <p class="title-text text-white fw-bold my-auto py-1 col-11 text-center">@yield('header-content')</p>
-                    </div>
-                </div>
-            </div>
-        </header>
+        @yield('header-content-back')
+        @yield('header-content-menu')
         <!-- end of header -->
         @yield('main-content')
 

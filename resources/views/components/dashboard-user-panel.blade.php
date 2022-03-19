@@ -19,6 +19,7 @@
               <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
+                        <input type="hidden" name="logoutrequest" value="ADMIN">
                         <button type="submit" class="btn btn-md btn-danger">
                           <i class="fas fa-sign-out-alt"></i> Logout
                         </button>

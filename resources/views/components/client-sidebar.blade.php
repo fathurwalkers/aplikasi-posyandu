@@ -24,7 +24,13 @@
               </li>
               <li class="nav-item d-flex px-2">
                 <i class="fas fa-sign-out-alt my-auto"></i>
-                <a class="nav-link" href="#">Keluar Akun</a>
+
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="logoutrequest" value="CLIENT">
+                    <button type="submit" class="nav-link">Keluar Akun</button>
+                </form>
+
               </li>
             </ul>
           </div>
