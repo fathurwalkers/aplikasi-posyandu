@@ -93,9 +93,7 @@ class GenerateController extends Controller
     {
         $faker                  = Faker::create('id_ID');
         $makanan_gambar = "default-fruit.png";
-
         $arr_makanan = ['Bakso', 'Sayur', 'Buah Naga', 'Alpukat', 'Apel', 'Tomat', 'Ikan', 'Salmon', 'Jengkol', 'Parende', 'Kangkung Tumis', 'Lalapan', 'Kurma', 'Lopis', 'Ayam', 'Ayam Bakar', 'Ayam Tumis', 'Ayam Geprek', 'Ayam Gulai', 'Sate Kambing', 'Sate Sapi', 'Sate Ayam', 'Sate'];
-
         $random_nama_makanan = Arr::random($arr_makanan);
         $random_makanan = Arr::random($arr_makanan);
         $random_number_double1 = $faker->numberBetween(65,365);
@@ -117,8 +115,6 @@ class GenerateController extends Controller
             ]);
             $save_makanan->save();
         }
-        $result = Makanan::all();
-        dd($result);
     }
 
     public function generate_hasil_pemeriksaan()
@@ -128,16 +124,13 @@ class GenerateController extends Controller
             $data = Data::all()->toArray();
             $umur  = $faker->numberBetween(3,48);
             $arr_number = [1,2];
-
             $random_data = Arr::random($data);
             $random_number = Arr::random($arr_number);
             $random_digit = $faker->numberBetween(1,2);
             $random_float_berat = $faker->randomFloat($random_digit, 1, 10);
             $random_float_tinggi = $faker->randomFloat($random_digit, 1, 10);
-
             $hasil_berat = $random_float_berat * 2;
             $hasil_tinggi = $random_float_tinggi * 2;
-
             $hasil_pemeriksaan = new Hasilpemeriksaan;
             $save_hasil_pemeriksaan = $hasil_pemeriksaan->create([
                 'hasil_umur_ukur' => $umur, // BULAN
@@ -158,6 +151,7 @@ class GenerateController extends Controller
     public function chained_generate()
     {
         $this->generate_data();
+        $this->generate_makanan();
         $this->generate_hasil_pemeriksaan();
         return redirect()->route('admin-home')->with('status', 'Berhasil generate Data!');
     }
