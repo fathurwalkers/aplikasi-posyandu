@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use App\Models\Login;
 use App\Models\Data;
+use App\Models\Hasilpemeriksaan;
+use App\Models\Makanan;
 
 class BackController extends Controller
 {
