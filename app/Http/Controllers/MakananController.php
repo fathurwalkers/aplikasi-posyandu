@@ -45,7 +45,7 @@ class MakananController extends Controller
             } else {
                 $ext = $request->file('makanan_gambar')->getClientOriginalExtension();
                 $randomNamaGambar = strtolower(Str::random(10)) . "." .$ext;
-                $gambar_ori = $request->file('makanan_gambar')->move(public_path('default-img/foto'), $randomNamaGambar);
+                $gambar_ori = $request->file('makanan_gambar')->move(public_path('default-img'), $randomNamaGambar);
                 $gambar = $randomNamaGambar;
             }
 

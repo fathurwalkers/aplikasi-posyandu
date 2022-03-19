@@ -57,16 +57,24 @@
                                         <hr />
                                         <div class="row mb-4">
                                             <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
-                                                <img src="{{ asset('default-img/foto') }}/{{ $item->makanan_gambar }}" alt="" class="img img-thumbnail" width="50%">
+                                                <img src="{{ asset('default-img') }}/{{ $item->makanan_gambar }}" alt="" class="img img-thumbnail" width="35%">
                                             </div>
                                         </div>
                                         <hr />
                                             <div class="row">
                                                 <div class="col-sm-4 col-md-4 col-lg-4">
                                                     <h5 class="fix-text">Nama Makanan</h5>
+                                                    <h5 class="fix-text">Kalori</h5>
+                                                    <h5 class="fix-text">Karbohidrat</h5>
+                                                    <h5 class="fix-text">Lemak</h5>
+                                                    <h5 class="fix-text">Protein</h5>
                                                 </div>
                                                 <div class="col-sm-8 col-md-8 col-lg-8">
-                                                    <h5 class="fix-text">: {{ $item->data_nama_lengkap }} </h5>
+                                                    <h5 class="fix-text">: {{ $item->makanan_nama }} </h5>
+                                                    <h5 class="fix-text">: {{ $item->makanan_kalori }} Kilokalori </h5>
+                                                    <h5 class="fix-text">: {{ $item->makanan_karbohidrat }} Gram </h5>
+                                                    <h5 class="fix-text">: {{ $item->makanan_lemak }} Gram </h5>
+                                                    <h5 class="fix-text">: {{ $item->makanan_protein }} Gram </h5>
                                                 </div>
                                             </div>
                                         <hr />
