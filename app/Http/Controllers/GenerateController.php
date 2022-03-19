@@ -89,6 +89,33 @@ class GenerateController extends Controller
         }
     }
 
+    public function generate_makanan()
+    {
+        $faker                  = Faker::create('id_ID');
+        for ($i=0; $i < 2; $i++) {
+            $makanan_gambar = "default-fruit.png";
+
+            $arr_makanan = [];
+
+            $random_makanan = Arr::random($arr_makanan);
+            $random_digit = $faker->numberBetween(1,2);
+            $random_float = $faker->randomFloat($random_digit, 1, 10);
+
+            $makanan = new Makanan;
+            $save_makanan = $makanan->create([
+                'makanan_gambar' => $makanan_gambar,
+                'makanan_nama' => ,
+                'makanan_kalori' => ,
+                'makanan_karbohidrat' => ,
+                'makanan_lemak' => ,
+                'makanan_protein' => ,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+            $save_makanan->save();
+        }
+    }
+
     public function generate_hasil_pemeriksaan()
     {
         $faker                  = Faker::create('id_ID');
