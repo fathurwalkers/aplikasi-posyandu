@@ -19,6 +19,7 @@ class GenerateController extends Controller
     {
         $faker                  = Faker::create('id_ID');
         for ($i=0; $i < 50; $i++) {
+            $umur = $faker->numberBetween(11,72);
             $arr_jenis_kelamin  = ["L", "P"];
             $arr_number  = [1, 2];
             $random_number = Arr::random($arr_number);
@@ -37,6 +38,13 @@ class GenerateController extends Controller
                     $nama_lengkap = $nama_depan . " " . $faker->words($random_number, true) . " " . $nama_belakang;
                     break;
             }
+
+            if ($umur < 38) {
+                $tipe = "BALITA";
+            } else {
+                $tipe = "ANAK";
+            }
+
             $data = new Data;
             $save_data = $data->create([
                 "data_foto" => $data_foto,
@@ -44,7 +52,8 @@ class GenerateController extends Controller
                 "data_nama_orang_tua" => $faker->name(),
                 "data_alamat_lengkap" => $faker->address(),
                 "data_jenis_kelamin" => $random_jenis_kelamin,
-                "data_umur" => $faker->numberBetween(6,48),
+                "data_tipe" => $tipe,
+                "data_umur" => $umur,
                 "created_at" => now(),
                 "updated_at" => now()
             ]);
