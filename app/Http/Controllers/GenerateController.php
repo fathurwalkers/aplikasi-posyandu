@@ -92,28 +92,33 @@ class GenerateController extends Controller
     public function generate_makanan()
     {
         $faker                  = Faker::create('id_ID');
+        $makanan_gambar = "default-fruit.png";
+
+        $arr_makanan = ['Bakso', 'Sayur', 'Buah Naga', 'Alpukat', 'Apel', 'Tomat', 'Ikan', 'Salmon', 'Jengkol', 'Parende', 'Kangkung Tumis', 'Lalapan', 'Kurma', 'Lopis', 'Ayam', 'Ayam Bakar', 'Ayam Tumis', 'Ayam Geprek', 'Ayam Gulai', 'Sate Kambing', 'Sate Sapi', 'Sate Ayam', 'Sate'];
+
+        $random_nama_makanan = Arr::random($arr_makanan);
+        $random_makanan = Arr::random($arr_makanan);
+        $random_number_double1 = $faker->numberBetween(65,365);
+        $random_number_double2 = $faker->numberBetween(65,365);
+        $random_digit = $faker->numberBetween(1,2);
+        $random_float1 = $faker->randomFloat($random_digit, 1, 10);
+        $random_float2 = $faker->randomFloat($random_digit, 1, 10);
         for ($i=0; $i < 2; $i++) {
-            $makanan_gambar = "default-fruit.png";
-
-            $arr_makanan = [];
-
-            $random_makanan = Arr::random($arr_makanan);
-            $random_digit = $faker->numberBetween(1,2);
-            $random_float = $faker->randomFloat($random_digit, 1, 10);
-
             $makanan = new Makanan;
             $save_makanan = $makanan->create([
                 'makanan_gambar' => $makanan_gambar,
-                'makanan_nama' => ,
-                'makanan_kalori' => ,
-                'makanan_karbohidrat' => ,
-                'makanan_lemak' => ,
-                'makanan_protein' => ,
+                'makanan_nama' => $random_nama_makanan,
+                'makanan_kalori' => $random_number_double1,
+                'makanan_karbohidrat' => $random_float1,
+                'makanan_lemak' => $random_float2,
+                'makanan_protein' => $random_number_double2,
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
             $save_makanan->save();
         }
+        $result = Makanan::all();
+        dd($result);
     }
 
     public function generate_hasil_pemeriksaan()

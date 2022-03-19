@@ -55,6 +55,7 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], functi
 
 Route::group(['prefix' => '/generate'], function () {
     Route::get('/generate-data', [GenerateController::class, 'generate_data'])->name('generate-data');
+    Route::get('/generate-makanan', [GenerateController::class, 'generate_makanan'])->name('generate-makanan');
     Route::get('/generate-hasil-pemeriksaan', [GenerateController::class, 'generate_hasil_pemeriksaan'])->name('generate-hasil-pemeriksaan');
     Route::get('/chained-generate', [GenerateController::class, 'chained_generate'])->name('chained-generate');
 });
