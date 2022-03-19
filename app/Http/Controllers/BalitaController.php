@@ -13,8 +13,14 @@ use App\Models\Makanan;
 
 class BalitaController extends Controller
 {
-    public function daftar_balita()
+    public function data_balita()
     {
-        return view('dashboard.data-balita');
+        $users = session('data_login');
+        $data = Data::where('data_tipe', 'BALITA')->get();
+        dd($data);
+        return view('dashboard.data-balita', [
+            'users' => $users,
+            'data' => $data,
+        ]);
     }
 }

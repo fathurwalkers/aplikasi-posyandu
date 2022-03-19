@@ -47,10 +47,10 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], functi
     Route::get('/daftar-makanan', [MakananController::class, 'daftar_makanan'])->name('admin-daftar-makanan');
 
     // Anak Route
-    Route::get('/daftar-anak', [AnakController::class, 'daftar_anak'])->name('admin-daftar-anak');
+    Route::get('/data-anak', [AnakController::class, 'data_anak'])->name('admin-data-anak');
 
     // Balita Route
-    Route::get('/daftar-balita', [BalitaController::class, 'daftar_balita'])->name('admin-daftar-balita');
+    Route::get('/data-balita', [BalitaController::class, 'data_balita'])->name('admin-data-balita');
 });
 
 Route::group(['prefix' => '/generate'], function () {

@@ -13,23 +13,12 @@ use App\Models\Makanan;
 
 class AnakController extends Controller
 {
-    public function daftar_anak()
+    public function data_anak()
     {
         $users = session('data_login');
         $data = Data::where('data_tipe', 'ANAK')->get();
         dd($data);
         return view('dashboard.data-anak', [
-            'users' => $users,
-            'data' => $data,
-        ]);
-    }
-
-    public function daftar_balita()
-    {
-        $users = session('data_login');
-        $data = Data::where('data_tipe', 'BALITA')->get();
-        dd($data);
-        return view('dashboard.data-balita', [
             'users' => $users,
             'data' => $data,
         ]);

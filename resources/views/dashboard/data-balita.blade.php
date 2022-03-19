@@ -6,7 +6,7 @@
 </style>
 @endpush
 
-@section('content-header', 'Panel Beranda - Data Anak')
+@section('content-header', 'Panel Beranda - Data Balita')
 
 @section('content-body')
 

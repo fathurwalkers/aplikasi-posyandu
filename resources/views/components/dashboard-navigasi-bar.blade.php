@@ -67,8 +67,8 @@
             <li class="nav-item dropdown">
               <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Kelola Data</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('admin-daftar-anak') }}"> Data Anak </a></li>
-                <li><a class="nav-link" href="{{ route('admin-daftar-balita') }}"> Data Balita </a></li>
+                <li><a class="nav-link" href="{{ route('admin-data-anak') }}"> Data Anak </a></li>
+                <li><a class="nav-link" href="{{ route('admin-data-balita') }}"> Data Balita </a></li>
                 <li><a class="nav-link" href="#"> Laporan </a></li>
               </ul>
             </li>
