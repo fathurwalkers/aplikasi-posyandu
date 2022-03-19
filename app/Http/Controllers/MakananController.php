@@ -49,13 +49,13 @@ class MakananController extends Controller
                 $gambar = $randomNamaGambar;
             }
 
-            $save_update_data = $makanan->update([
+            $save_update_makanan = $makanan->update([
                 'makanan_gambar'            => $gambar,
                 'makanan_nama'              => $request->makanan_nama,
-                'makanan_kalori'            => intval($request->makanan_nama),
-                'makanan_karbohidrat'       => floatval($request->makanan_nama),
-                'makanan_lemak'             => floatval($request->makanan_nama),
-                'makanan_protein'           => intval($request->makanan_nama),
+                'makanan_kalori'            => intval($request->makanan_kalori),
+                'makanan_karbohidrat'       => floatval($request->makanan_karbohidrat),
+                'makanan_lemak'             => floatval($request->makanan_lemak),
+                'makanan_protein'           => intval($request->makanan_protein),
                 'updated_at'                => now()
             ]);
             return redirect()->route('admin-data-makanan')->with('status', 'Data Makanan dengan nama "' . $makanan->makanan_nama . '" Telah berhasil diubah!');
