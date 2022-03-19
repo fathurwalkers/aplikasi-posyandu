@@ -36,15 +36,15 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-4 col-md-4 col-lg-4">
-                                    <h5 class="fix-text-h5">Nama Lengkap </h5>
-                                    <h5 class="fix-text-h5">Username </h5>
-                                    <h5 class="fix-text-h5">Hak Akses </h5>
-                                    <h5 class="fix-text-h5">Status Pengguna </h5>
-                                    <h5 class="fix-text-h5">Email</h5>
-                                    <h5 class="fix-text-h5">No. HP / Telepon</h5>
+                                    <h5 class="">Nama Lengkap </h5>
+                                    <h5 class="">Username </h5>
+                                    <h5 class="">Hak Akses </h5>
+                                    <h5 class="">Status Pengguna </h5>
+                                    <h5 class="">Email</h5>
+                                    <h5 class="">No. HP / Telepon</h5>
                                 </div>
                                 <div class="col-sm-8 col-md-8 col-lg-8">
-                                    <h5 class="fix-text-h5">: NULL </h5>
+                                    <h5 class="">: {{ $users->login_nama }} </h5>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{ route('admin-data-anak') }}"> Data Anak </a></li>
                 <li><a class="nav-link" href="{{ route('admin-data-balita') }}"> Data Balita </a></li>
-                <li><a class="nav-link" href="#"> Laporan </a></li>
+                {{-- <li><a class="nav-link" href="#"> Laporan </a></li> --}}
               </ul>
             </li>
 

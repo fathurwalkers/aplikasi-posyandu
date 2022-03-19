@@ -61,7 +61,7 @@
                             <div class="modal-content">
 
                                 <div class="modal-header">
-                                    <h4 class="modal-title text-center py-0">Informasi Data Anak : " {{ $item->data_nama_lengkap }} "</h4>
+                                    <h4 class="modal-title text-center py-0">Informasi Data balita : " {{ $item->data_nama_lengkap }} "</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -127,7 +127,7 @@
                                 </div>
 
                                 <div class="modal-body">Apakah anda yakin ingin menghapus Data ini? </div>
-                                <form action="{{ route('admin-hapus-data-anak', $item->id) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('admin-hapus-data-balita', $item->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="modal-footer">
                                         <button type="button" class="btn gray btn-outline-secondary" data-dismiss="modal">Cancel</button>
@@ -147,13 +147,13 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Ubah Data Anak</h4>
+                                    <h4 class="modal-title">Ubah Data Balita</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">Silahkan ubah data Anak berikut. </div>
-                                <form action="{{ route('admin-update-data-anak', $item->id) }}" method="POST" enctype="multipart/form-data">
+                                <div class="modal-body">Silahkan ubah data Balita berikut. </div>
+                                <form action="{{ route('admin-update-data-balita', $item->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="container border-dark">

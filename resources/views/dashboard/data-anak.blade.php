@@ -2,7 +2,39 @@
 
 @push('css')
 <style>
+    .cke {
+        visibility: visible !important;
+    }
+    .modal-title {
+        font-size: 23px!important;
+        color: black!important;
+    }
 
+    .modal-backdrop.show {
+        display: none !important;
+    }
+    .fix-text {
+        font-size: 9px;
+        color: rgb(0, 0, 0)!important;
+        font-family: sans-serif!important;
+    }
+    table.dataTable tbody th,
+    table.dataTable tbody td {
+        padding: 8px 10px!important;
+        border-color: #d8d8d8!important;
+        border-top-color: #d8d8d8!important;
+        border-right-color: #d8d8d8!important;
+        border-bottom-color: #d8d8d8!important;
+        border-left-color: #d8d8d8!important;
+        table-layout:fixed!important;
+        white-space: nowrap!important;
+    }
+    .button-text-fix {
+        font-size: 11px!important;
+    }
+    table.dataTable {
+        color: rgb(0, 0, 0)!important;
+    }
 </style>
 @endpush
 

@@ -54,6 +54,9 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], functi
 
     // Balita Route
     Route::get('/data-balita', [BalitaController::class, 'data_balita'])->name('admin-data-balita');
+    Route::post('/tambah-data-balita', [BalitaController::class, 'tambah_data_balita'])->name('admin-tambah-data-balita');
+    Route::post('/update-data-balita/{id}', [BalitaController::class, 'update_data_balita'])->name('admin-update-data-balita');
+    Route::post('/hapus-data-balita/{id}', [BalitaController::class, 'hapus_data_balita'])->name('admin-hapus-data-balita');
 });
 
 Route::group(['prefix' => '/generate'], function () {
