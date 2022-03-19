@@ -31,7 +31,7 @@ Route::group(['prefix' => '/client', 'middleware' => 'cekloginclient'], function
     Route::get('/', [ClientController::class, 'index'])->name('client-home');
 
     // Makanan Route
-    Route::get('/daftar-makanan', [ClientController::class, 'daftar_makanan'])->name('client-daftar-makanan');
+    Route::get('/menu-makanan', [ClientController::class, 'menu_makanan'])->name('client-menu-makanan');
 
     // Anak Route
     Route::get('/daftar-anak', [ClientController::class, 'daftar_anak'])->name('client-daftar-anak');

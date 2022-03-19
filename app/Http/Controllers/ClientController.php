@@ -18,9 +18,9 @@ class ClientController extends Controller
         return view('client.index');
     }
 
-    public function daftar_makanan()
+    public function menu_makanan()
     {
-        return view('client.daftar-makanan');
+        return view('client.menu-makanan');
     }
 
     public function daftar_anak()

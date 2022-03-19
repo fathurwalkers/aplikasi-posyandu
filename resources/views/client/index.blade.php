@@ -21,7 +21,7 @@
       <!-- konten menu -->
       <section id="content" class="content py-5 d-flex justify-content-center align-items-center" style="min-height: 100%">
         <div class="container">
-          <a href="daftar-makanan.html" class="card kartu mb-3 text-decoration-none bg-warning text-white p-0">
+          <a href="{{ route('client-menu-makanan') }}" class="card kartu mb-3 text-decoration-none bg-warning text-white p-0">
             <div class="row g-0">
               <div class="col-8">
                 <div class="card-body px-1">
