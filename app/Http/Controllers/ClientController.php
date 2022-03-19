@@ -26,6 +26,14 @@ class ClientController extends Controller
         ]);
     }
 
+    public function daftar_makanan()
+    {
+        $makanan = Makanan::all();
+        return view('client.daftar-makanan', [
+            'makanan' => $makanan
+        ]);
+    }
+
     public function info_gizi()
     {
         return view('client.info-gizi');

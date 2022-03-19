@@ -34,7 +34,7 @@
               </div>
             </div>
           </a>
-          <a href="hitung-gizi-anak.html" class="card mb-3 text-decoration-none hitung-gizi text-white p-0">
+          <a href="{{ asset('tampilan') }}/hitung-gizi-anak.html" class="card mb-3 text-decoration-none hitung-gizi text-white p-0">
             <div class="row g-0">
               <div class="col-8">
                 <div class="card-body px-1">
@@ -47,7 +47,7 @@
               </div>
             </div>
           </a>
-          <a href="profil-grafik.html" class="card mb-3 text-decoration-none grafik text-white p-0">
+          <a href="{{ asset('tampilan') }}/profil-grafik.html" class="card mb-3 text-decoration-none grafik text-white p-0">
             <div class="row g-0">
               <div class="col-8">
                 <div class="card-body px-1">
@@ -60,7 +60,7 @@
               </div>
             </div>
           </a>
-          <a href="status-gizi-anak.html" class="card mb-3 text-decoration-none status-gizi text-white p-0">
+          <a href="{{ asset('tampilan') }}/status-gizi-anak.html" class="card mb-3 text-decoration-none status-gizi text-white p-0">
             <div class="row g-0">
               <div class="col-8">
                 <div class="card-body px-1">

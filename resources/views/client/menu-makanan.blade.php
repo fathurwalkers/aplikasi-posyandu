@@ -69,10 +69,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <a href="daftar-bahan.html" class="nav-link px-1 text-dark">
+                    <a href="{{ route('client-daftar-makanan') }}" class="nav-link px-1 text-dark">
                         <div class="card text-center px-0 py-2 bg-white text-dark">
-                            <div class="card-title mb-0 display-6 fw-bold p-2">Informasi Daftar Bahan</div>
-                            <div class="card-body py-2 px-1">Melihat kandungan gizi bahan makanan</div>
+                            <div class="card-title mb-0 display-6 fw-bold p-2">Informasi Daftar Makanan</div>
+                            <div class="card-body py-2 px-1">Melihat kandungan gizi bahan makanan sehat</div>
                         </div>
                     </a>
                 </div>

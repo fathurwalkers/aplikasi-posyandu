@@ -4,11 +4,11 @@
           <div class="akun-info col-12">
             <div class="card text-white rounded-0 sidenav">
               <div class="card-body pb-1 mt-3" id="navbarNav">
-                <img class="card-img-top gambar img-thumbnail rounded-circle" src="{{ asset('tampilan') }}/img/businessman.png" alt="user" />
+                <img class="card-img-top gambar img-thumbnail rounded-circle" src="{{ asset('default-img') }}/{{ $users->data->data_foto }}" alt="user" />
               </div>
               <div class="card-body mt-3 pt-0 mb-0" id="navbarNav">
-                <p class="card-text mb-0">Awaluddin</p>
-                <p class="card-text mb-2">awalrajab69@gmail.com</p>
+                <p class="card-text mb-0">{{ $users->login_nama }}</p>
+                <p class="card-text mb-2">{{ $users->login_email }}</p>
               </div>
             </div>
           </div>
