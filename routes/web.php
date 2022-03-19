@@ -48,6 +48,9 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], functi
 
     // Anak Route
     Route::get('/data-anak', [AnakController::class, 'data_anak'])->name('admin-data-anak');
+    Route::post('/tambah-data-anak', [AnakController::class, 'tambah_data_anak'])->name('admin-tambah-data-anak');
+    Route::post('/update-data-anak/{id}', [AnakController::class, 'update_data_anak'])->name('admin-update-data-anak');
+    Route::post('/hapus-data-anak/{id}', [AnakController::class, 'hapus_data_anak'])->name('admin-hapus-data-anak');
 
     // Balita Route
     Route::get('/data-balita', [BalitaController::class, 'data_balita'])->name('admin-data-balita');
