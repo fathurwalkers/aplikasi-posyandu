@@ -5,7 +5,11 @@
             <thead class="thead-dark">
                 <tr class="text-center">
                     <th>No</th>
-                    <th>Makanan</th>
+                    <th>Nama Makanan</th>
+                    <th>Kilokalori</th>
+                    <th>Karbohidrat</th>
+                    <th>Lemak</th>
+                    <th>Protein</th>
                     <th>Kelola</th>
                 </tr>
             </thead>
@@ -15,6 +19,10 @@
                     <tr>
                         <td class="text-center">{{ $loop->iteration }}</td>
                         <td class="">{{ $item->makanan_nama }}</td>
+                        <td class="">{{ $item->makanan_kalori }}</td>
+                        <td class="">{{ $item->makanan_karbohidrat }}</td>
+                        <td class="">{{ $item->makanan_lemak }}</td>
+                        <td class="">{{ $item->makanan_protein }}</td>
 
                         <td style="width: 25%">
                             <div class="row">
