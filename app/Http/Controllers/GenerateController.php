@@ -18,7 +18,7 @@ class GenerateController extends Controller
     public function generate_data()
     {
         $faker                  = Faker::create('id_ID');
-        for ($i=0; $i < 25; $i++) {
+        for ($i=0; $i < 50; $i++) {
             $arr_jenis_kelamin  = ["L", "P"];
             $arr_number  = [1, 2];
             $random_number = Arr::random($arr_number);
@@ -77,5 +77,48 @@ class GenerateController extends Controller
             $login_data->data()->associate($save_data->id);
             $login_data->save();
         }
+    }
+
+    public function generate_hasil_pemeriksaan()
+    {
+        $faker                  = Faker::create('id_ID');
+        for ($i=0; $i < 35; $i++) {
+            $data = Data::all()->toArray();
+            $umur  = $faker->numberBetween(3,48);
+            $arr_number = [1,2];
+
+            $random_data = Arr::random($data);
+            $random_number = Arr::random($arr_number);
+            $random_digit = $faker->numberBetween(1,2);
+            $random_float_berat = $faker->randomFloat($random_gigit, 1, 10);
+            $random_float_tinggi = $faker->randomFloat($random_gigit, 1, 10);
+
+            $hasil_berat = $random_float_berat * 2;
+            $hasil_tinggi = $random_float_tinggi * 2;
+
+            $hasil_pemeriksaan = new Hasilpemeriksaan;
+            $save_hasil_pemeriksaan = $hasil_pemeriksaan->create([
+                'hasil_umur_ukur' => $umur, // BULAN
+                'hasil_tanggal_lahir' => $faker->date(),
+                'hasil_berat' => $random_float_berat,
+                'hasil_tinggi' => $random_float_tinggi,
+                'hasil_berat_total' => $hasil_berat,
+                'hasil_tinggi_total' => $hasil_tinggi,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+            $save_hasil_pemeriksaan->save();
+            $save_hasil_pemeriksaan->data()->associate($random_data["id"]);
+            $save_hasil_pemeriksaan->save();
+        }
+        $result = Hasilpemeriksaan::all();
+        dd($result);
+    }
+
+    public function chained_generate()
+    {
+        $this->generate_data();
+        $this->generate_hasil_pemeriksaan();
+        return redirect()->route('admin-home')->with('status', 'Berhasil generate Data!');
     }
 }
