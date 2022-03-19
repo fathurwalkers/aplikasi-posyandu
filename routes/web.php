@@ -44,7 +44,10 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], functi
     Route::get('/', [AdminController::class, 'index'])->name('admin-home');
 
     // Makanan Route
-    Route::get('/daftar-makanan', [MakananController::class, 'daftar_makanan'])->name('admin-daftar-makanan');
+    Route::get('/daftar-makanan', [MakananController::class, 'data_makanan'])->name('admin-data-makanan');
+    Route::post('/tambah-data-makanan', [MakananController::class, 'tambah_data_makanan'])->name('admin-tambah-data-makanan');
+    Route::post('/update-data-makanan/{id}', [MakananController::class, 'update_data_makanan'])->name('admin-update-data-makanan');
+    Route::post('/hapus-data-makanan/{id}', [MakananController::class, 'hapus_data_makanan'])->name('admin-hapus-data-makanan');
 
     // Anak Route
     Route::get('/data-anak', [AnakController::class, 'data_anak'])->name('admin-data-anak');

@@ -76,7 +76,7 @@
             <li class="nav-item dropdown">
               <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Kelola Makanan</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('admin-daftar-makanan') }}"> Data Makanan Sehat </a></li>
+                <li><a class="nav-link" href="{{ route('admin-data-makanan') }}"> Data Makanan Sehat </a></li>
               </ul>
             </li>
 
