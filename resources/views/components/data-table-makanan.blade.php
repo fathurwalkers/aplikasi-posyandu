@@ -141,16 +141,10 @@
                                     <div class="container border-dark">
 
                                         <div class="row">
-                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
                                                 <div class="form-group">
-                                                    <label for="data_nama_lengkap">Nama Lengkap</label>
-                                                    <input type="text" class="form-control" id="data_nama_lengkap" placeholder="Masukkan merk kendaraan" name="data_nama_lengkap" value="{{ $item->data_nama_lengkap }}">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-6 col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="data_nama_orang_tua">Nama Orang Tua (Ayah/Ibu/Wali)</label>
-                                                    <input type="text" class="form-control" id="data_nama_orang_tua" placeholder="Masukkan merk kendaraan" name="data_nama_orang_tua" value="{{ $item->data_nama_orang_tua }}">
+                                                    <label for="makanan_nama">Nama Makanan</label>
+                                                    <input type="text" class="form-control" id="makanan_nama" placeholder="Masukkan merk kendaraan" name="makanan_nama" value="{{ $item->makanan_nama }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -158,28 +152,29 @@
                                         <div class="row">
                                             <div class="col-sm-6 col-md-6 col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="data_jenis_kelamin">Jenis Kelamin</label>
-                                                    <select id="data_jenis_kelamin" class="form-control" name="data_jenis_kelamin">
-                                                        <option value="{{ $item->data_jenis_kelamin }}" selected>
-                                                            @switch($item->data_jenis_kelamin)
-                                                                @case("L")
-                                                                    Laki - Laki
-                                                                    @break
-                                                                @case("P")
-                                                                    Perempuan
-                                                                    @break
-                                                            @endswitch
-                                                        </option>
-                                                        <option value="L">Laki - Laki</option>
-                                                        <option value="P">Perempuan</option>
-                                                    </select>
+                                                    <label for="makanan_protein">Protein</label>
+                                                    <input type="number" class="form-control" id="makanan_protein" placeholder="Masukkan merk kendaraan" name="makanan_protein" value="{{ $item->makanan_protein }}">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-6 col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="data_umur">Umur (Bulan)</label>
-                                                    <input type="number" class="form-control" id="data_umur" placeholder="Masukkan merk kendaraan" name="data_umur" value="{{ $item->data_umur }}">
-                                                    <small id="kendaraan_merk" class="form-text text-muted">Contoh : 22 (Bulan). </small>
+                                                    <label for="makanan_kalori">Kilokalori</label>
+                                                    <input type="number" class="form-control" id="makanan_kalori" placeholder="Masukkan merk kendaraan" name="makanan_kalori" value="{{ $item->makanan_kalori }}">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="makanan_karbohidrat">Karbohidrat</label>
+                                                    <input type="number" class="form-control" id="makanan_karbohidrat" placeholder="Masukkan merk kendaraan" name="makanan_karbohidrat" value="{{ $item->makanan_karbohidrat }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="makanan_lemak">Lemak</label>
+                                                    <input type="number" class="form-control" id="makanan_lemak" placeholder="Masukkan merk kendaraan" name="makanan_lemak" value="{{ $item->makanan_lemak }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -187,17 +182,8 @@
                                         <div class="row">
                                             <div class="col-sm-12 col-md-12 col-lg-12">
                                                 <div class="form-group">
-                                                    <label for="data_alamat_lengkap">Alamat</label>
-                                                    <input type="text" class="form-control" id="data_alamat_lengkap" placeholder="Masukkan merk kendaraan" name="data_alamat_lengkap" value="{{ $item->data_alamat_lengkap }}">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-12 col-lg-12">
-                                                <div class="form-group">
-                                                    <label for="data_foto">Foto</label>
-                                                    <input type="file" class="form-control-file" id="data_foto" name="data_foto">
+                                                    <label for="makanan_gambar">Gambar Makanan</label>
+                                                    <input type="file" class="form-control-file" id="makanan_gambar" name="makanan_gambar">
                                                 </div>
                                             </div>
                                         </div>

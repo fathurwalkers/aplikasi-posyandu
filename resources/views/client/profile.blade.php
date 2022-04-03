@@ -58,6 +58,13 @@
         visibility: hidden;
         color: transparent;
         }
+
+        .profile {
+            position: relative;
+            z-index: 1 !important;
+            min-height: 100%;
+            padding: 70px 0 80px 0!important;
+        }
     </style>
 @endpush
 
@@ -102,24 +109,58 @@
                     <h5 class="mb-3">Ubah Profil Akun</h5>
                 </div>
                 <div class="col-12">
-                    <form action="">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                </div>
+                <div class="col-12">
+                    <form action="{{ route('client-update-data', $data->id) }}" enctype="multipart/form-data" method="POST">
+                        @csrf
                         <div class="card border-1 py-1 bg-transparent">
-                        <div class="card-body bg-transparent text-center">
-                            <img src="{{ asset('default-img') }}/{{ $users->data->data_foto }}" class="card-img-top" alt="profile" id="gambar1" />
-                            <button class="btn col-12 mt-3 text-white"onclick="document.getElementById('photo').click(); return false" style="background-color: #0099ff;">Ubah Foto Profil</button>
-                            <input type="file" onchange="readURL(this);"
-                            class="form-control inputImage btn btn-primary text-center px-0" id="photo" accept="image/*"
-                            style="color: transparent; display: none" />
-                        </div>
-                        <div class="card-body bg-transparent">
-                            <p class="card-text">Nama Pengguna</p>
-                            <input type="text" class="form-control" value="Awaluddin Rajab" />
-                        </div>
+                            <div class="card-body bg-transparent text-center">
+                                <img src="{{ asset('default-img/foto') }}/{{ $data->data_foto }}" class="card-img-top" alt="profile" id="gambar1" />
+                                <button class="btn col-12 mt-3 text-white"onclick="document.getElementById('photo').click(); return false" style="background-color: #0099ff;">Ubah Foto Profil</button>
+                                <input type="file" onchange="readURL(this);"
+                                class="form-control inputImage btn btn-primary text-center px-0" id="photo" accept="image/*"
+                                style="color: transparent; display: none" name="data_foto"/>
+                            </div>
+                            <div class="card-body bg-transparent">
+                                <p class="card-text">Nama Lengkap</p>
+                                <input type="text" class="form-control" value="{{ $data->data_nama_lengkap }}" name="data_nama_lengkap" />
+                            </div>
+                            <div class="card-body bg-transparent">
+                                <p class="card-text">Nama Orang Tua / Wali</p>
+                                <input type="text" class="form-control" value="{{ $data->data_nama_orang_tua }}" name="data_nama_orang_tua" />
+                            </div>
+                            <div class="card-body bg-transparent">
+                                <p class="card-text">Alamat</p>
+                                <input type="text" class="form-control" value="{{ $data->data_alamat_lengkap }}" name="data_alamat_lengkap" />
+                            </div>
+                            <div class="card-body bg-transparent">
+                                <p class="card-text">Jenis Kelamin</p>
+                                <select id="data_jenis_kelamin" class="form-control" name="data_jenis_kelamin">
+                                    <option value="{{ $data->data_jenis_kelamin }}" selected>
+                                        @switch($data->data_jenis_kelamin)
+                                            @case("L")
+                                                Laki - Laki
+                                                @break
+                                            @case("P")
+                                                Perempuan
+                                                @break
+                                        @endswitch
+                                    </option>
+                                    <option value="L">Laki - Laki</option>
+                                    <option value="P">Perempuan</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="mb-2 mt-4">
-                        <button class="btn col-12 py-2 rounded-pill text-white" style="background-color: #0099ff;">Simpan</button>
+                            <button class="btn col-12 py-2 rounded-pill text-white" style="background-color: #0099ff;">Simpan</button>
                         </div>
                     </form>
+                    <a href="{{ route('client-home') }}" class="btn col-12 py-2 rounded-pill text-white" style="background-color: #0099ff;">Kembali</a>
                 </div>
             </div>
         </div>

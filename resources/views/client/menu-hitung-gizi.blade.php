@@ -1,72 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.client-layouts')
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+@section('title', 'Daftar Anak - Dashboard')
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>Status Gizi</title>
+@push('css')
+    <link rel="stylesheet" href="{{ asset('tampilan') }}/style/daftar.css" />
     <style>
+        html {
+            overflow: hidden;
+        }
+
         .hitung-gizi {
             background-color: #38b6ff;
         }
-        
+
         .hitung-gizi .title-text {
             font-size: 20px;
         }
-        
+
         .hitung-gizi i {
             font-size: 19px;
         }
-        
+
         .daftar {
             min-height: 100%;
             padding: 50px 0 70px 0;
         }
-        
+
         .daftar .card {
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.278);
             border-top: transparent;
         }
-        
+
         .daftar .card .card-title {
             background-color: #38b6ff;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             color: white;
         }
-        
+
         .card .childIcon {
             width: 60px;
             height: 60px;
             /* border: 3px solid black; */
         }
+        .profile {
+            position: relative;
+            z-index: 1 !important;
+            min-height: 100%;
+            padding: 70px 0 80px 0!important;
+        }
     </style>
-</head>
+@endpush
 
-<body id="body">
-    <!-- header -->
-    <header class="hitung-gizi fixed-top" id="hitung-gizi">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 d-flex mx-auto my-auto py-2 headerTop">
-                    <a href="hitung-gizi-anak.html" class="card-title text-white mb-0 py-1 my-auto">
-                        <i class="fa fa-arrow-left mb-0"></i>
-                    </a>
-                    <p class="title-text text-white fw-bold my-auto py-1 col-11 text-center">Hitung Gizi</p>
+@section('header-content', 'Hitung Gizi')
+
+@section('header-content-back')
+<header class="hitung-gizi fixed-top" id="hitung-gizi">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex mx-auto my-auto py-2 headerTop">
+                <a href="{{ route('client-home') }}" class="card-title text-white mb-0 py-1 my-auto">
+                    <i class="fa fa-arrow-left mb-0"></i>
+                </a>
+                    <p class="title-text text-white fw-bold my-auto py-1 col-11 text-center">@yield('header-content')</p>
                 </div>
             </div>
         </div>
     </header>
+@endsection
+
+@section('main-content')
+    <!-- header -->
+    {{-- <header class="daftar-bahan fixed-top" id="daftar-bahan">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex mx-auto my-auto py-2 headerTop">
+                    <a href="dashboard.html" class="card-title text-white mb-0 py-1 my-auto">
+                        <i class="fa fa-arrow-left mb-0"></i>
+                    </a>
+                    <p class="title-text text-white fw-bold my-auto py-1 col-11 text-center">Daftar Anak</p>
+                </div>
+            </div>
+        </div>
+    </header> --}}
     <!-- end of header -->
 
-    <!-- daftar hitung gizi -->
     <section id="daftar" class="daftar mt-3">
         <div class="container">
             <div class="row">
@@ -115,11 +134,5 @@
             </div>
         </div>
     </section>
-    <!-- end of daftar -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
-</body>
-
-</html>
+@endsection

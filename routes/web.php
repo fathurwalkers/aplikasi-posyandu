@@ -35,9 +35,11 @@ Route::group(['prefix' => '/client', 'middleware' => 'cekloginclient'], function
     Route::get('/menu-makanan', [ClientController::class, 'menu_makanan'])->name('client-menu-makanan');
     Route::get('/daftar-makanan', [ClientController::class, 'daftar_makanan'])->name('client-daftar-makanan');
     Route::get('/info-gizi', [ClientController::class, 'info_gizi'])->name('client-info-gizi');
+    Route::get('/menu-hitung-gizi', [ClientController::class, 'menu_hitung_gizi'])->name('client-menu-hitung-gizi');
 
     // Anak Route
     Route::get('/daftar-anak', [ClientController::class, 'daftar_anak'])->name('client-daftar-anak');
+    Route::post('/update-data/{id}', [ClientController::class, 'update_data'])->name('client-update-data');
 
     // Balita Route
     Route::get('/daftar-balita', [ClientController::class, 'daftar_balita'])->name('client-daftar-balita');

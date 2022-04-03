@@ -34,7 +34,7 @@
               </div>
             </div>
           </a>
-          <a href="{{ asset('tampilan') }}/hitung-gizi-anak.html" class="card mb-3 text-decoration-none hitung-gizi text-white p-0">
+          <a href="{{ route('client-menu-hitung-gizi') }}" class="card mb-3 text-decoration-none hitung-gizi text-white p-0">
             <div class="row g-0">
               <div class="col-8">
                 <div class="card-body px-1">

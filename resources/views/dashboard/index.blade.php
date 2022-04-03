@@ -13,7 +13,7 @@
     @if($users->login_level == "admin")
         <div class="row">
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-success">
                         <i class="fas fa-truck"></i>
@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-primary">
                             <i class="fas fa-users"></i>
@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-warning">
                             {{-- <i class="far fa-car"></i> --}}
@@ -62,10 +62,9 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+            {{-- <div class="col-lg-3 col-md-3 col-sm-3 col-3">
                 <div class="card card-statistic-1">
                     <div class="card-icon bg-warning">
-                            {{-- <i class="far fa-car"></i> --}}
                             <i class="fas fa-file-contract"></i>
                     </div>
                     <div class="card-wrap">
@@ -77,7 +76,7 @@
                         </div>
                 </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     @endif

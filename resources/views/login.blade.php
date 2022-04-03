@@ -26,16 +26,6 @@
 
     <div class="container">
 
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
-            </div>
-        </div>
-
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
@@ -44,11 +34,23 @@
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
+
                         <div class="row">
                             <div class="col-12">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class=" font-weight-bold text-dark mb-4">Administrator</h1>
+                                    </div>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                @if (session('status'))
+                                                    <div class="alert alert-success">
+                                                        {{ session('status') }}
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </div>
                                     </div>
                                     <form class="user" method="POST" action="{{ route('post-login') }}">
                                         @csrf
