@@ -27,7 +27,9 @@ Route::get('/login-admin', [BackController::class, 'login_admin'])->name('login-
 Route::post('/post-login', [BackController::class, 'post_login'])->name('post-login');
 Route::post('/post-register', [BackController::class, 'post_register'])->name('post-register');
 
-Route::group(['prefix' => '/client', 'middleware' => 'cekloginclient'], function () {
+Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
+    // ====================================================================================================
+    // CLIENT - USER
     Route::get('/', [ClientController::class, 'index'])->name('client-home');
     Route::get('/profile', [ClientController::class, 'profile'])->name('client-profile');
 
@@ -43,6 +45,27 @@ Route::group(['prefix' => '/client', 'middleware' => 'cekloginclient'], function
 
     // Balita Route
     Route::get('/daftar-balita', [ClientController::class, 'daftar_balita'])->name('client-daftar-balita');
+    // ====================================================================================================
+
+
+    // ====================================================================================================
+    // ADMINISTRATOR
+
+    // MANAGE MAKANAN
+    Route::post('/tambah-data-makanan', [MakananController::class, 'tambah_data_makanan'])->name('admin-tambah-data-makanan');
+    Route::post('/update-data-makanan/{id}', [MakananController::class, 'update_data_makanan'])->name('admin-update-data-makanan');
+    Route::post('/hapus-data-makanan/{id}', [MakananController::class, 'hapus_data_makanan'])->name('admin-hapus-data-makanan');
+
+    // MANAGE ANAK
+    Route::post('/tambah-data-anak', [AnakController::class, 'tambah_data_anak'])->name('admin-tambah-data-anak');
+    Route::post('/update-data-anak/{id}', [AnakController::class, 'update_data_anak'])->name('admin-update-data-anak');
+    Route::post('/hapus-data-anak/{id}', [AnakController::class, 'hapus_data_anak'])->name('admin-hapus-data-anak');
+
+    // MANAGE BALITA
+    Route::post('/tambah-data-balita', [BalitaController::class, 'tambah_data_balita'])->name('admin-tambah-data-balita');
+    Route::post('/update-data-balita/{id}', [BalitaController::class, 'update_data_balita'])->name('admin-update-data-balita');
+    Route::post('/hapus-data-balita/{id}', [BalitaController::class, 'hapus_data_balita'])->name('admin-hapus-data-balita');
+    // ====================================================================================================
 });
 
 Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], function () {
@@ -50,21 +73,12 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], functi
 
     // Makanan Route
     Route::get('/daftar-makanan', [MakananController::class, 'data_makanan'])->name('admin-data-makanan');
-    Route::post('/tambah-data-makanan', [MakananController::class, 'tambah_data_makanan'])->name('admin-tambah-data-makanan');
-    Route::post('/update-data-makanan/{id}', [MakananController::class, 'update_data_makanan'])->name('admin-update-data-makanan');
-    Route::post('/hapus-data-makanan/{id}', [MakananController::class, 'hapus_data_makanan'])->name('admin-hapus-data-makanan');
 
     // Anak Route
     Route::get('/data-anak', [AnakController::class, 'data_anak'])->name('admin-data-anak');
-    Route::post('/tambah-data-anak', [AnakController::class, 'tambah_data_anak'])->name('admin-tambah-data-anak');
-    Route::post('/update-data-anak/{id}', [AnakController::class, 'update_data_anak'])->name('admin-update-data-anak');
-    Route::post('/hapus-data-anak/{id}', [AnakController::class, 'hapus_data_anak'])->name('admin-hapus-data-anak');
 
     // Balita Route
     Route::get('/data-balita', [BalitaController::class, 'data_balita'])->name('admin-data-balita');
-    Route::post('/tambah-data-balita', [BalitaController::class, 'tambah_data_balita'])->name('admin-tambah-data-balita');
-    Route::post('/update-data-balita/{id}', [BalitaController::class, 'update_data_balita'])->name('admin-update-data-balita');
-    Route::post('/hapus-data-balita/{id}', [BalitaController::class, 'hapus_data_balita'])->name('admin-hapus-data-balita');
 });
 
 Route::group(['prefix' => '/generate'], function () {
