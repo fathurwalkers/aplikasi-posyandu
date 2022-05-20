@@ -18,6 +18,11 @@ class ClientController extends Controller
         return view('client.index');
     }
 
+    public function menu_admin()
+    {
+        return view('client.menu-admin');
+    }
+
     public function menu_hitung_gizi()
     {
         return view('client.menu-hitung-gizi');

@@ -31,6 +31,7 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
     // ====================================================================================================
     // CLIENT - USER
     Route::get('/', [ClientController::class, 'index'])->name('client-home');
+    Route::get('/menu-admin', [ClientController::class, 'menu_admin'])->name('menu-admin');
     Route::get('/profile', [ClientController::class, 'profile'])->name('client-profile');
 
     // Makanan Route
