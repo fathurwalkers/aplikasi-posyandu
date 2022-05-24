@@ -71,6 +71,9 @@ class ClientController extends Controller
     {
         $user = session('data_login');
         $users = Login::find($user->id);
+        if ($users->login_level == "admin") {
+            return redirect()->route('client-home');
+        }
         $data = Data::find($users->data_id);
         return view('client.profile', [
             'users' => $users,
