@@ -42,10 +42,10 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
 
     // Anak Route
     Route::get('/daftar-anak', [ClientController::class, 'daftar_anak'])->name('client-daftar-anak');
+    Route::get('/daftar-balita', [ClientController::class, 'daftar_balita'])->name('client-daftar-balita');
     Route::post('/update-data/{id}', [ClientController::class, 'update_data'])->name('client-update-data');
 
     // Balita Route
-    Route::get('/daftar-balita', [ClientController::class, 'daftar_balita'])->name('client-daftar-balita');
     // ====================================================================================================
 
 
@@ -66,6 +66,8 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
     Route::post('/tambah-data-balita', [BalitaController::class, 'tambah_data_balita'])->name('admin-tambah-data-balita');
     Route::post('/update-data-balita/{id}', [BalitaController::class, 'update_data_balita'])->name('admin-update-data-balita');
     Route::post('/hapus-data-balita/{id}', [BalitaController::class, 'hapus_data_balita'])->name('admin-hapus-data-balita');
+
+    Route::get('/lihat-data/{id}', [ClientController::class, 'lihat_profile'])->name('lihat-profile');
     // ====================================================================================================
 });
 

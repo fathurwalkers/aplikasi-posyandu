@@ -28,7 +28,7 @@ class BalitaController extends Controller
         $data_id = $id;
         $finddata = Data::findOrFail($data_id);
         $finddata->forceDelete();
-        return redirect()->route('admin-data-balita')->with('status', 'Data telah dihapus!');
+        return redirect()->route('client-daftar-balita')->with('status', 'Data telah dihapus!');
     }
 
     public function update_data_balita(Request $request, $id)

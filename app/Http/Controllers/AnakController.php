@@ -17,7 +17,7 @@ class AnakController extends Controller
     {
         $users = session('data_login');
         $data = Data::where('data_tipe', 'ANAK')->get();
-        return view('dashboard.data-anak', [
+        return view('client.admin-daftar-anak', [
             'users' => $users,
             'data' => $data,
         ]);
@@ -28,7 +28,7 @@ class AnakController extends Controller
         $data_id = $id;
         $finddata = Data::findOrFail($data_id);
         $finddata->forceDelete();
-        return redirect()->route('admin-data-anak')->with('status', 'Data telah dihapus!');
+        return redirect()->route('client-daftar-anak')->with('status', 'Data telah dihapus!');
     }
 
     public function update_data_anak(Request $request, $id)
@@ -36,7 +36,7 @@ class AnakController extends Controller
         $data_id = $id;
         $data = Data::find($data_id);
         if ($data == null) {
-            return redirect()->route('data-anak')->with('status', 'Data yang anda ingin ubah tidak dapat ditemukan. ');
+            return redirect()->route('client-daftar-anak')->with('status', 'Data yang anda ingin ubah tidak dapat ditemukan. ');
         } else {
             $gambar_cek = $request->file('data_foto');
             if (!$gambar_cek) {
@@ -65,7 +65,7 @@ class AnakController extends Controller
                 "data_umur"             => $umur,
                 "updated_at"            => now()
             ]);
-            return redirect()->route('admin-data-anak')->with('status', 'Data dengan nama "' . $data->data_nama_lengkap . '" Telah berhasil diubah!');
+            return redirect()->route('client-daftar-anak')->with('status', 'Data dengan nama "' . $data->data_nama_lengkap . '" Telah berhasil diubah!');
         }
     }
 }

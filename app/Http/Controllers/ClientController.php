@@ -31,7 +31,7 @@ class ClientController extends Controller
     public function update_data(Request $request, $id)
     {
         $data_id = $id;
-        $data = Data::find($data_id);
+        $data = Data::find($id);
         if ($data == null) {
             return redirect()->route('data-anak')->with('status', 'Data yang anda ingin ubah tidak dapat ditemukan. ');
         } else {
@@ -59,10 +59,11 @@ class ClientController extends Controller
                 "data_alamat_lengkap"   => $request->data_alamat_lengkap,
                 "data_jenis_kelamin"    => $request->data_jenis_kelamin,
                 "data_tipe"             => $tipe,
-                "data_umur"             => $umur,
+                // "data_umur"             => $umur,
                 "updated_at"            => now()
             ]);
-            return redirect()->route('client-profile')->with('status', 'Data dengan nama "' . $data->data_nama_lengkap . '" Telah berhasil diubah!');
+            // dd($data);
+            return redirect()->route('client-daftar-anak')->with('status', 'Data dengan nama "' . $data->data_nama_lengkap . '" Telah berhasil diubah!');
         }
     }
 
@@ -95,14 +96,24 @@ class ClientController extends Controller
         return view('client.menu-makanan');
     }
 
+    public function lihat_profile($id)
+    {
+        $data = Data::find($id);
+        return view('client.lihat-profile', [
+            'data' => $data
+        ]);
+    }
+
     public function daftar_anak()
     {
         $user = session('data_login');
         $users = Login::find($user->id);
         $data = Data::find($users->data_id);
+        $anak = Data::where('data_tipe', 'ANAK')->get();
         return view('client.daftar-anak', [
             'data' => $data,
-            'users' => $users
+            'users' => $users,
+            'anak' => $anak,
         ]);
     }
 
@@ -119,6 +130,14 @@ class ClientController extends Controller
 
     public function daftar_balita()
     {
-        return view('client.daftar-balita');
+        $user = session('data_login');
+        $users = Login::find($user->id);
+        $data = Data::find($users->data_id);
+        $balita = Data::where('data_tipe', 'BALITA')->get();
+        return view('client.daftar-balita', [
+            'data' => $data,
+            'users' => $users,
+            'balita' => $balita,
+        ]);
     }
 }

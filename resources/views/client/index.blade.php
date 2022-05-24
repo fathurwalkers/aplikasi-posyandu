@@ -21,7 +21,7 @@
     <!-- konten menu -->
     <section id="content" class="content py-5 d-flex justify-content-center align-items-center" style="min-height: 100%">
         <div class="container">
-            <a href="{{ asset('tampilan') }}/status-gizi-anak.html"
+            <a href="{{ route('menu-admin') }}"
                 class="card mb-3 text-decoration-none status-gizi text-white p-0">
                 <div class="row g-0">
                     <div class="col-8">
