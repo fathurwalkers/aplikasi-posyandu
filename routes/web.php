@@ -44,6 +44,8 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
     Route::get('/daftar-anak', [ClientController::class, 'daftar_anak'])->name('client-daftar-anak');
     Route::get('/daftar-balita', [ClientController::class, 'daftar_balita'])->name('client-daftar-balita');
     Route::post('/update-data/{id}', [ClientController::class, 'update_data'])->name('client-update-data');
+    Route::get('/tambah-data', [ClientController::class, 'tambah_data'])->name('client-tambah-data');
+    Route::post('/tambah-data/post', [ClientController::class, 'post_tambah_data'])->name('post-tambah-data');
 
     // Balita Route
     // ====================================================================================================

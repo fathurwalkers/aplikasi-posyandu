@@ -1,6 +1,6 @@
 @extends('layouts.client-layouts')
 
-@section('title', 'Daftar Anak - Dashboard')
+@section('title', 'Tambah Data - Dashboard')
 
 @push('css')
     <link rel="stylesheet" href="{{ asset('tampilan') }}/style/daftar.css" />
@@ -68,7 +68,7 @@
     </style>
 @endpush
 
-@section('header-content', 'Data Akun')
+@section('header-content', 'Tambah Data Baru')
 
 @section('header-content-back')
     <header class="daftar-bahan fixed-top" id="daftar-bahan">
@@ -106,7 +106,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h5 class="mb-3">Ubah Data</h5>
+                    <h5 class="mb-3">Tambah Data Baru</h5>
+                </div>
+                <div class="col-12">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div>
                 <div class="col-12">
                     @if (session('status'))
@@ -116,11 +127,11 @@
                     @endif
                 </div>
                 <div class="col-12">
-                    <form action="{{ route('client-update-data', $data->id) }}" enctype="multipart/form-data" method="POST">
+                    <form action="{{ route('post-tambah-data') }}" enctype="multipart/form-data" method="POST">
                         @csrf
                         <div class="card border-1 py-1 bg-transparent">
                             <div class="card-body bg-transparent text-center">
-                                <img src="{{ asset('default-img/foto') }}/{{ $data->data_foto }}" class="card-img-top" alt="profile" id="output_image" />
+                                <img src="{{ asset('default-img') }}/male.jpg" class="card-img-top" alt="profile" id="output_image" />
                                 <button class="btn col-12 mt-3 text-white" onclick="document.getElementById('photo').click(); return false" style="background-color: #0099ff;">Ubah Foto Profil</button>
                                 {{-- <input type="file" onchange="readURL(this);"
                                 class="form-control inputImage btn btn-primary text-center px-0" id="photo" accept="image/*"
@@ -131,29 +142,24 @@
                             </div>
                             <div class="card-body bg-transparent">
                                 <p class="card-text">Nama Lengkap</p>
-                                <input type="text" class="form-control" value="{{ $data->data_nama_lengkap }}" name="data_nama_lengkap" />
+                                <input type="text" class="form-control" name="data_nama_lengkap" />
+                            </div>
+                            <div class="card-body bg-transparent">
+                                <p class="card-text">Tanggal Lahir</p>
+                                <input type="date" class="form-control" name="data_tanggal_lahir" />
                             </div>
                             <div class="card-body bg-transparent">
                                 <p class="card-text">Nama Orang Tua / Wali</p>
-                                <input type="text" class="form-control" value="{{ $data->data_nama_orang_tua }}" name="data_nama_orang_tua" />
+                                <input type="text" class="form-control" name="data_nama_orang_tua" />
                             </div>
                             <div class="card-body bg-transparent">
                                 <p class="card-text">Alamat</p>
-                                <input type="text" class="form-control" value="{{ $data->data_alamat_lengkap }}" name="data_alamat_lengkap" />
+                                <input type="text" class="form-control" name="data_alamat_lengkap" />
                             </div>
                             <div class="card-body bg-transparent">
                                 <p class="card-text">Jenis Kelamin</p>
                                 <select id="data_jenis_kelamin" class="form-control" name="data_jenis_kelamin">
-                                    <option value="{{ $data->data_jenis_kelamin }}" selected>
-                                        @switch($data->data_jenis_kelamin)
-                                            @case("L")
-                                                Laki - Laki
-                                                @break
-                                            @case("P")
-                                                Perempuan
-                                                @break
-                                        @endswitch
-                                    </option>
+                                    <option selected>Pilih jenis kelamin</option>
                                     <option value="L">Laki - Laki</option>
                                     <option value="P">Perempuan</option>
                                 </select>

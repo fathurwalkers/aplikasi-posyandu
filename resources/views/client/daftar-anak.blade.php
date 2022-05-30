@@ -98,7 +98,15 @@
                         </div>
                         <div class="card-body text-decoration-none d-flex p-0 me-auto">
                             <i class="fa fa-calendar my-auto px-1"></i>
-                            <p class="card-text ms-1">{{ $item->data_umur }} Bulan</p>
+                            @php
+                                $date1 = strtotime($item->data_tanggal_lahir);
+                                $date2 = strtotime(now());
+                                $totalbulan = 0;
+                                while (($date1 = strtotime('+1 MONTH', $date1)) <= $date2) {
+                                    $totalbulan++;
+                                }
+                            @endphp
+                            <p class="card-text ms-1">{{ $totalbulan }} Bulan</p>
                         </div>
                         <div class="card-body text-decoration-none d-flex p-0 ms-1">
                             <i class="fa fa-male my-auto"></i>
@@ -116,10 +124,10 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-3 px-2 py-1 d-flex flex-column justify-content-between">
-                        <button class="btn rounded-3 shadow-none lihat text-white px-1" type="submit"
-                            onclick="document.getElementById('views').click(); return false">Lihat</button>
-                        <a href="{{ route('lihat-profile', $item->id) }}" id="views">Lihat</a>
+                    <div class="col-3 px-2 py-2 d-flex flex-column justify-content-between">
+                        <button class="btn rounded-3 shadow-none lihat text-white px-2 mb-1" type="submit"
+                        onclick="location.href = '{{ route('lihat-profile', $item->id) }}';">Lihat</button>
+                        {{-- <a href="{{ route('lihat-profile', $item->id) }}" id="views">Lihat</a> --}}
 
                         <form action="{{ route('admin-hapus-data-anak', $item->id) }}" method="POST">
                             @csrf
@@ -130,7 +138,13 @@
             </div>
             @endforeach
 
-            <a href="tambah-anak.html" class="card-body tambah img-thumbnail rounded-circle text-white">
+            <div class="row mt-3 mb-5">
+                <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                    {{ $anak->onEachSide(0)->links() }}
+                </div>
+            </div>
+
+            <a href="{{ route('client-tambah-data') }}" class="card-body tambah img-thumbnail rounded-circle text-white">
                 <i class="fa fa-user-plus"></i>
             </a>
         </div>

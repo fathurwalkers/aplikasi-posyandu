@@ -12,6 +12,7 @@ use App\Models\Login;
 use App\Models\Data;
 use App\Models\Hasilpemeriksaan;
 use App\Models\Makanan;
+use Carbon\Carbon;
 
 class GenerateController extends Controller
 {
@@ -31,7 +32,8 @@ class GenerateController extends Controller
     {
         $faker                          = Faker::create('id_ID');
         for ($i=0; $i < 50; $i++) {
-            $ttl = $faker->dateTimeBetween('2017-01-01', '2021-10-25');
+            // $ttl = $faker->dateTimeBetween('2017-01-01', '2021-10-25');
+            $ttl = $randomDate = Carbon::now()->subDays(rand(0, 3524))->format('Y-m-d H:i:s');
             $arr_jenis_kelamin          = ["L", "P"];
             $arr_number                 = [1, 2];
             $random_number              = Arr::random($arr_number);
@@ -51,7 +53,7 @@ class GenerateController extends Controller
                     break;
             }
 
-            $date1 = strtotime($testdata->detail_ttl);
+            $date1 = strtotime($ttl);
             $date2 = strtotime(now());
             $totalbulan = 0;
             while (($date1 = strtotime('+1 MONTH', $date1)) <= $date2) {
