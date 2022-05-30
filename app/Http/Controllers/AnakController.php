@@ -13,6 +13,18 @@ use App\Models\Makanan;
 
 class AnakController extends Controller
 {
+    public function hitung_bulan($id)
+    {
+        $testdata = Data::find($id);
+        $date1 = strtotime($testdata->detail_ttl);
+        $date2 = strtotime(now());
+        $totalbulan = 0;
+        while (($date1 = strtotime('+1 MONTH', $date1)) <= $date2) {
+            $totalbulan++;
+        }
+        return $totalbulan;
+    }
+
     public function data_anak()
     {
         $users = session('data_login');
@@ -48,8 +60,11 @@ class AnakController extends Controller
                 $gambar_ori = $request->file('data_foto')->move(public_path('default-img/foto'), $randomNamaGambar);
                 $gambar = $randomNamaGambar;
             }
-            $umur = intval($request->data_umur);
-            if ($request->data_umur < 38) {
+            // $umur = intval($request->data_umur);
+            $hitung_umur = $this->hitung_bulan($data->id);
+            $umur = intval($hitung_umur);
+
+            if ($umur < 38) {
                 $tipe                   = "BALITA";
             } else {
                 $tipe                   = "ANAK";

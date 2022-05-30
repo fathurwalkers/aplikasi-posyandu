@@ -139,10 +139,6 @@
                                 <input type="text" class="form-control" value="{{ $data->data_alamat_lengkap }}" name="data_alamat_lengkap" />
                             </div>
                             <div class="card-body bg-transparent">
-                                <p class="card-text">Umur (Bulan)</p>
-                                <input type="number" class="form-control" value="{{ $data->data_umur }}" name="data_umur" />
-                            </div>
-                            <div class="card-body bg-transparent">
                                 <p class="card-text">Jenis Kelamin</p>
                                 <select id="data_jenis_kelamin" class="form-control" name="data_jenis_kelamin">
                                     <option value="{{ $data->data_jenis_kelamin }}" selected>

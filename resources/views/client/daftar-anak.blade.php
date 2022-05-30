@@ -68,9 +68,20 @@
     <!-- menu-->
     <section id="daftar" class="daftar">
         <div class="container">
-            <div class="row">
+
+            {{-- <div class="row">
                 <div class="col-12 mt-3">
                     <h5 class="">Daftar Anak</h5>
+                </div>
+            </div> --}}
+
+            <div class="row mt-3">
+                <div class="col-sm-12">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                 </div>
             </div>
 
