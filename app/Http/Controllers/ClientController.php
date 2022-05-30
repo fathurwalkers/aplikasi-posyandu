@@ -73,11 +73,17 @@ class ClientController extends Controller
                 "data_alamat_lengkap"   => $request->data_alamat_lengkap,
                 "data_jenis_kelamin"    => $request->data_jenis_kelamin,
                 "data_tipe"             => $tipe,
-                // "data_umur"             => $umur,
                 "updated_at"            => now()
             ]);
-            // dd($data);
-            return redirect()->route('client-daftar-anak')->with('status', 'Data dengan nama "' . $data->data_nama_lengkap . '" Telah berhasil diubah!');
+
+            switch ($tipe) {
+                case 'ANAK':
+                    return redirect()->route('client-daftar-anak')->with('status', 'Data dengan nama "' . $data->data_nama_lengkap . '" Telah berhasil diubah!');
+                    break;
+                case 'BALITA':
+                    return redirect()->route('client-daftar-balita')->with('status', 'Data dengan nama "' . $data->data_nama_lengkap . '" Telah berhasil diubah!');
+                    break;
+            }
         }
     }
 

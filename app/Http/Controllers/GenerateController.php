@@ -15,11 +15,23 @@ use App\Models\Makanan;
 
 class GenerateController extends Controller
 {
+    public function hitung_bulan($id)
+    {
+        $testdata = Data::find($id);
+        $date1 = strtotime($testdata->detail_ttl);
+        $date2 = strtotime(now());
+        $totalbulan = 0;
+        while (($date1 = strtotime('+1 MONTH', $date1)) <= $date2) {
+            $totalbulan++;
+        }
+        return $totalbulan;
+    }
+
     public function generate_data()
     {
         $faker                          = Faker::create('id_ID');
         for ($i=0; $i < 50; $i++) {
-            $umur                       = $faker->numberBetween(11,72);
+            $ttl = $faker->dateTimeBetween('2017-01-01', '2021-10-25');
             $arr_jenis_kelamin          = ["L", "P"];
             $arr_number                 = [1, 2];
             $random_number              = Arr::random($arr_number);
@@ -39,7 +51,14 @@ class GenerateController extends Controller
                     break;
             }
 
-            if ($umur < 38) {
+            $date1 = strtotime($testdata->detail_ttl);
+            $date2 = strtotime(now());
+            $totalbulan = 0;
+            while (($date1 = strtotime('+1 MONTH', $date1)) <= $date2) {
+                $totalbulan++;
+            }
+
+            if ($totalbulan < 38) {
                 $tipe                   = "BALITA";
             } else {
                 $tipe                   = "ANAK";
@@ -53,7 +72,7 @@ class GenerateController extends Controller
                 "data_alamat_lengkap"   => $faker->address(),
                 "data_jenis_kelamin"    => $random_jenis_kelamin,
                 "data_tipe"             => $tipe,
-                "data_umur"             => $umur,
+                "data_tanggal_lahir"    => $ttl,
                 "created_at"            => now(),
                 "updated_at"            => now()
             ]);
