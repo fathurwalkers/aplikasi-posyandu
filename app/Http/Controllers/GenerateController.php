@@ -162,9 +162,15 @@ class GenerateController extends Controller
                 'hasil_tanggal_lahir'   => $data["data_tanggal_lahir"],
                 'hasil_berat'           => $random_float_berat,
                 'hasil_tinggi'          => $random_float_tinggi,
-                'hasil_zscore_berat'     => $hasil_berat,
-                'hasil_zscore_tinggi'    => $hasil_tinggi,
-                'hasil_zscore_berat_tinggi'    => $hasil_berat_tinggi,
+
+                'hasil_zscore_berat'     => NULL,
+                'hasil_zscore_tinggi'    => NULL,
+                'hasil_zscore_berat_tinggi'    => NULL,
+
+                // 'hasil_zscore_berat'     => $hasil_berat,
+                // 'hasil_zscore_tinggi'    => $hasil_tinggi,
+                // 'hasil_zscore_berat_tinggi'    => $hasil_berat_tinggi,
+
                 'created_at'            => now(),
                 'updated_at'            => now()
             ]);
