@@ -53,7 +53,7 @@
     </style>
 @endpush
 
-@section('header-content', 'Hitung Berat Badan')
+@section('header-content', 'Hitung Tinggi Badan')
 
 @section('header-content-back')
 <header class="hitung-gizi fixed-top" id="hitung-gizi">
@@ -131,11 +131,11 @@
                                     <p class="card-text">{{ $bulan }}</p>
                                 </div>
                                 <div class="card-title d-flex justify-content-between mb-0">
-                                    <p class="card-text my-auto" style="font-size: 14px; color: #b4b4b4">Berat(kg)</p>
-                                    <i class="fa fa-weight my-auto"></i>
+                                    <p class="card-text my-auto" style="font-size: 14px; color: #b4b4b4">Tinggi(Cm)</p>
+                                    <i class="fa fa-ruler-vertical my-auto"></i>
                                 </div>
                                 <div class="mb-0 card-title">
-                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" name="kg" required>
+                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" name="cm" required>
                                 </div>
                             </div>
                             <div class="card-body text-center px-1">

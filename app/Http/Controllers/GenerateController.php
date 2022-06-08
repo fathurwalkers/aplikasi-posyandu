@@ -19,7 +19,7 @@ class GenerateController extends Controller
     public function hitung_bulan($id)
     {
         $testdata = Data::find($id);
-        $date1 = strtotime($testdata->detail_ttl);
+        $date1 = strtotime($testdata->data_tanggal_lahir);
         $date2 = strtotime(now());
         $totalbulan = 0;
         while (($date1 = strtotime('+1 MONTH', $date1)) <= $date2) {
@@ -31,7 +31,7 @@ class GenerateController extends Controller
     public function generate_data()
     {
         $faker                          = Faker::create('id_ID');
-        for ($i=0; $i < 50; $i++) {
+        for ($i=0; $i < 20; $i++) {
             // $ttl = $faker->dateTimeBetween('2017-01-01', '2021-10-25');
             $ttl = $randomDate = Carbon::now()->subDays(rand(0, 3524))->format('Y-m-d H:i:s');
             $arr_jenis_kelamin          = ["L", "P"];
@@ -113,7 +113,7 @@ class GenerateController extends Controller
     public function generate_makanan()
     {
         $faker                          = Faker::create('id_ID');
-        for ($i=0; $i < 40; $i++) {
+        for ($i=0; $i < 15; $i++) {
             $makanan_gambar                 = "default-fruit.png";
             $arr_makanan                    = ['Bakso', 'Sayur', 'Buah Naga', 'Alpukat', 'Apel', 'Tomat', 'Ikan', 'Salmon', 'Jengkol', 'Parende', 'Kangkung Tumis', 'Lalapan', 'Kurma', 'Lopis', 'Ayam', 'Ayam Bakar', 'Ayam Tumis', 'Ayam Geprek', 'Ayam Gulai', 'Sate Kambing', 'Sate Sapi', 'Sate Ayam', 'Sate'];
             $random_nama_makanan            = Arr::random($arr_makanan);
@@ -141,9 +141,11 @@ class GenerateController extends Controller
     public function generate_hasil_pemeriksaan()
     {
         $faker                          = Faker::create('id_ID');
-        for ($i=0; $i < 35; $i++) {
-            $data                       = Data::all()->toArray();
-            $umur                       = $faker->numberBetween(3,48);
+        $item                           = Data::all()->toArray();
+        foreach ($item as $data) {
+            // $data                       = Data::all()->toArray();
+            // $umur                       = $faker->numberBetween(3,48);
+            $umur                       = $this->hitung_bulan($data["id"]);
             $arr_number                 = [1,2];
             $random_data                = Arr::random($data);
             $random_number              = Arr::random($arr_number);
@@ -155,18 +157,44 @@ class GenerateController extends Controller
             $hasil_pemeriksaan          = new Hasilpemeriksaan;
             $save_hasil_pemeriksaan     = $hasil_pemeriksaan->create([
                 'hasil_umur_ukur'       => $umur, // BULAN
-                'hasil_tanggal_lahir'   => $faker->date(),
+                'hasil_tanggal_lahir'   => $data["data_tanggal_lahir"],
                 'hasil_berat'           => $random_float_berat,
                 'hasil_tinggi'          => $random_float_tinggi,
-                'hasil_berat_total'     => $hasil_berat,
-                'hasil_tinggi_total'    => $hasil_tinggi,
+                'hasil_zscore_berat'     => $hasil_berat,
+                'hasil_zscore_tinggi'    => $hasil_tinggi,
                 'created_at'            => now(),
                 'updated_at'            => now()
             ]);
             $save_hasil_pemeriksaan->save();
-            $save_hasil_pemeriksaan->data()->associate($random_data["id"]);
+            $save_hasil_pemeriksaan->data()->associate($data["id"]);
             $save_hasil_pemeriksaan->save();
         }
+        // for ($i=0; $i < 35; $i++) {
+        //     $data                       = Data::all()->toArray();
+        //     $umur                       = $faker->numberBetween(3,48);
+        //     $arr_number                 = [1,2];
+        //     $random_data                = Arr::random($data);
+        //     $random_number              = Arr::random($arr_number);
+        //     $random_digit               = $faker->numberBetween(1,2);
+        //     $random_float_berat         = $faker->randomFloat($random_digit, 1, 10);
+        //     $random_float_tinggi        = $faker->randomFloat($random_digit, 1, 10);
+        //     $hasil_berat                = $random_float_berat * 2;
+        //     $hasil_tinggi               = $random_float_tinggi * 2;
+        //     $hasil_pemeriksaan          = new Hasilpemeriksaan;
+        //     $save_hasil_pemeriksaan     = $hasil_pemeriksaan->create([
+        //         'hasil_umur_ukur'       => $umur, // BULAN
+        //         'hasil_tanggal_lahir'   => $faker->date(),
+        //         'hasil_berat'           => $random_float_berat,
+        //         'hasil_tinggi'          => $random_float_tinggi,
+        //         'hasil_zscore_berat'     => $hasil_berat,
+        //         'hasil_zscore_tinggi'    => $hasil_tinggi,
+        //         'created_at'            => now(),
+        //         'updated_at'            => now()
+        //     ]);
+        //     $save_hasil_pemeriksaan->save();
+        //     $save_hasil_pemeriksaan->data()->associate($random_data["id"]);
+        //     $save_hasil_pemeriksaan->save();
+        // }
     }
 
     public function chained_generate()

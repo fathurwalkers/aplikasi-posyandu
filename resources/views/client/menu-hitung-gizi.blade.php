@@ -104,7 +104,7 @@
                     </a>
                 </div>
                 <div class="col-6 px-1">
-                    <a href="tinggi-badan.html" class="nav-link px-1 text-dark">
+                    <a href="{{ route('hitung-tinggi-badan') }}" class="nav-link px-1 text-dark">
                         <!-- card -->
                         <div class="card">
                             <div class="card-title text-center mb-0 pt-1 px-0 bg-warning">
