@@ -33,6 +33,9 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
     // CLIENT - USER
     Route::get('/', [ClientController::class, 'index'])->name('client-home');
 
+    Route::get('/pengisian-data', [BackController::class, 'pengisian_data'])->name('pengisian-data');
+    Route::get('/post-pengisian-data', [BackController::class, 'post_pengisian_data'])->name('post-pengisian-data');
+
     Route::get('/hitung-berat-badan', [PelayananController::class, 'hitung_berat_badan'])->name('hitung-berat-badan');
     Route::post('/post-hitung-berat-badan', [PelayananController::class, 'post_hitung_berat_badan'])->name('post-hitung-berat-badan');
 

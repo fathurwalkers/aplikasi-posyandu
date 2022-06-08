@@ -161,30 +161,30 @@
                             <div class="col-12 d-flex justify-content-between px-3">
                                 <h5>Status Tinggi</h5>
                                 @switch($hasil->hasil_zscore_tinggi)
-                                @case ($hasil->hasil_zscore_tinggi <= -3.0)
-                                    <h5>Tinggi Sangat Pendek</h5>
-                                    @break
-                                @case ($hasil->hasil_zscore_tinggi >= -3.0 && $hasil->hasil_zscore_tinggi <= -2.0)
-                                    <h5>Tinggi Pendek</h5>
-                                    @break
-                                @case ($hasil->hasil_zscore_tinggi >= -2.0 && $hasil->hasil_zscore_tinggi <= -1.0)
-                                    <h5>Tinggi Mendekati Pendek</h5>
-                                    @break
-                                @case ($hasil->hasil_zscore_tinggi >= -1.0 && $hasil->hasil_zscore_tinggi <= 1.0)
-                                    <h5>Tinggi Normal</h5>
-                                    @break
-                                @case ($hasil->hasil_zscore_tinggi >= 1.0 && $hasil->hasil_zscore_tinggi <= 2.0)
-                                    <h5>Tinggi Mendekati Lebih</h5>
-                                    @break
-                                @case ($hasil->hasil_zscore_tinggi >= 2.0 && $hasil->hasil_zscore_tinggi <= 3.0)
-                                    <h5>Tinggi Lebih</h5>
-                                    @break
-                                @case ($hasil->hasil_zscore_tinggi >= 3.0)
-                                    <h5>Tinggi Sangat Lebih</h5>
-                                    @break
-                                @case (null)
-                                    <h5>Belum melakukan Pengukuran</h5>
-                                    @break
+                                    @case ($hasil->hasil_zscore_tinggi <= -3.0)
+                                        <h5>Tinggi Sangat Pendek</h5>
+                                        @break
+                                    @case ($hasil->hasil_zscore_tinggi >= -3.0 && $hasil->hasil_zscore_tinggi <= -2.0)
+                                        <h5>Tinggi Pendek</h5>
+                                        @break
+                                    @case ($hasil->hasil_zscore_tinggi >= -2.0 && $hasil->hasil_zscore_tinggi <= -1.0)
+                                        <h5>Tinggi Mendekati Pendek</h5>
+                                        @break
+                                    @case ($hasil->hasil_zscore_tinggi >= -1.0 && $hasil->hasil_zscore_tinggi <= 1.0)
+                                        <h5>Tinggi Normal</h5>
+                                        @break
+                                    @case ($hasil->hasil_zscore_tinggi >= 1.0 && $hasil->hasil_zscore_tinggi <= 2.0)
+                                        <h5>Tinggi Mendekati Lebih</h5>
+                                        @break
+                                    @case ($hasil->hasil_zscore_tinggi >= 2.0 && $hasil->hasil_zscore_tinggi <= 3.0)
+                                        <h5>Tinggi Lebih</h5>
+                                        @break
+                                    @case ($hasil->hasil_zscore_tinggi >= 3.0)
+                                        <h5>Tinggi Sangat Lebih</h5>
+                                        @break
+                                    @case (null)
+                                        <h5>Belum melakukan Pengukuran</h5>
+                                        @break
                                 @endswitch
                             </div>
                             <div class="col-12 py-3">

@@ -22,6 +22,22 @@
     <section id="content" class="content py-5 d-flex justify-content-center align-items-center" style="min-height: 100%">
         <div class="container">
 
+            @if ($users->data_id == null)
+            <a href="{{ route('pengisian-data') }}"
+                class="card mb-3 text-decoration-none status-gizi text-white p-0">
+                <div class="row g-0">
+                    <div class="col-8">
+                        <div class="card-body px-1">
+                            <h5 class="card-title p-0 m-0">Pengisian Data</h5>
+                            <p class="card-text p-0 m-0">Pengisian Biodata Pengguna</p>
+                        </div>
+                    </div>
+                    <div class="col-4 mx-auto my-auto text-center py-4">
+                        <i style="font-size: 45px" class="fa fa-list-alt p-0"></i>
+                    </div>
+                </div>
+            </a>
+            @else
             @if ($users->login_level == 'admin')
             <a href="{{ route('menu-admin') }}"
                 class="card mb-3 text-decoration-none status-gizi text-white p-0">
@@ -96,6 +112,8 @@
                     </div>
                 </div>
             </a>
+            @endif
+
         </div>
     </section>
 

@@ -34,7 +34,7 @@
                 <input type="hidden" name="cekrequest" value="client">
 
                 <input type="text" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0 input" id="login_username" required autocomplete="off" name="login_username"/>
-                <label for="login_username" class="email">Email</label>
+                <label for="login_username" class="email">Username</label>
               </div>
               <div class="mt-3">
                 <input type="password" class="form-control bg-transparent border-0 border-bottom rounded-0 border-dark shadow-none ps-0" id="sandi" required name="login_password"/>

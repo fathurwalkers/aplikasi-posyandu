@@ -40,7 +40,7 @@ class BackController extends Controller
 
     public function register_client()
     {
-        return view('client.register');
+        return view('register');
     }
 
     public function logout(Request $request)
@@ -119,7 +119,7 @@ class BackController extends Controller
         $token                          = Hash::make($token_raw, [
             'rounds' => 12,
         ]);
-        $level                          = "user";
+        $level                          = "pengguna";
         $login_status                   = "verified";
         $login_data                     = new Login;
         $save_login                     = $login_data->create([
@@ -136,6 +136,16 @@ class BackController extends Controller
             'updated_at'                => now()
         ]);
         $save_login->save();
-        return redirect()->route('login')->with('status', 'Berhasil melakukan registrasi!');
+        return redirect()->route('login-client')->with('status', 'Berhasil melakukan registrasi!');
+    }
+
+    public function pengisian_data()
+    {
+        return view('client.pengisian-data');
+    }
+
+    public function post_pengisian_data(Request $request)
+    {
+        //
     }
 }
