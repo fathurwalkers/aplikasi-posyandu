@@ -16,6 +16,7 @@ class CreateHasilpemeriksaansTable extends Migration
             $table->float('hasil_tinggi')->nullable();
             $table->float('hasil_zscore_berat')->nullable();
             $table->float('hasil_zscore_tinggi')->nullable();
+            $table->float('hasil_zscore_berat_tinggi')->nullable();
 
             $table->unsignedBigInteger('data_id')->nullable()->default(null);
             $table->foreign('data_id')->references('id')->on('data_pengguna')->onDelete('cascade');

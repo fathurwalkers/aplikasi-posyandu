@@ -90,7 +90,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 px-1">
-                    <form action="{{ route('post-hitung-berat-badan') }}" method="POST">
+                    <form action="{{ route('post-hitung-berat-tinggi-badan') }}" method="POST">
                         @csrf
                         <div class="card px-1">
                             <div class="card-body">
@@ -135,14 +135,14 @@
                                     <i class="fa fa-weight my-auto"></i>
                                 </div>
                                 <div class="mb-3 card-title">
-                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" required>
+                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" required step="any" name="kg">
                                 </div>
                                 <div class="card-title d-flex justify-content-between mb-0">
                                     <p class="card-text my-auto" style="font-size: 14px; color: #b4b4b4">Tinggi(Cm)</p>
                                     <i class="fa fa-ruler-vertical my-auto"></i>
                                 </div>
                                 <div class="mb-0 card-title">
-                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" required>
+                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" required step="any" name="cm">
                                 </div>
                             </div>
                             {{-- <div class="card-body text-center px-1">

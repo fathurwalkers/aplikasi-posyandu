@@ -152,8 +152,10 @@ class GenerateController extends Controller
             $random_digit               = $faker->numberBetween(1,2);
             $random_float_berat         = $faker->randomFloat($random_digit, 1, 10);
             $random_float_tinggi        = $faker->randomFloat($random_digit, 1, 10);
+            $random_float_berat_tinggi        = $faker->randomFloat($random_digit, 1, 10);
             $hasil_berat                = $random_float_berat * 2;
             $hasil_tinggi               = $random_float_tinggi * 2;
+            $hasil_berat_tinggi               = $random_float_berat_tinggi * 2;
             $hasil_pemeriksaan          = new Hasilpemeriksaan;
             $save_hasil_pemeriksaan     = $hasil_pemeriksaan->create([
                 'hasil_umur_ukur'       => $umur, // BULAN
@@ -162,6 +164,7 @@ class GenerateController extends Controller
                 'hasil_tinggi'          => $random_float_tinggi,
                 'hasil_zscore_berat'     => $hasil_berat,
                 'hasil_zscore_tinggi'    => $hasil_tinggi,
+                'hasil_zscore_berat_tinggi'    => $hasil_berat_tinggi,
                 'created_at'            => now(),
                 'updated_at'            => now()
             ]);

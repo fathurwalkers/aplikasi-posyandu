@@ -59,8 +59,45 @@ class PelayananController extends Controller
             return redirect()->route('client-home')->with('status', 'Maaf, anda tidak meliki ke halaman ini.');
         } else {
             $bulan = $this->hitung_bulan($data->id);
-            $cm = $request->cm;
             $kg = $request->kg;
+            $cm = $request->cm;
+            if ($cm >= 55.0 && $cm <= 64.9) {
+                $median = 4.5;
+                $hitungan_awal = $kg - $median;
+                $hasil = $hitungan_awal;
+            }
+            if ($cm >= 65.0 && $cm <= 74.9) {
+                $median = 7.3;
+                $hitungan_awal = $kg - $median;
+                $hasil = $hitungan_awal;
+            }
+            if ($cm >= 75.0 && $cm <= 84.9) {
+                $median = 9.5;
+                $hitungan_awal = $kg - $median;
+                $hasil = $hitungan_awal;
+            }
+            if ($cm >= 85.0 && $cm <= 94.9) {
+                $median = 11.5;
+                $hitungan_awal = $kg - $median;
+                $hasil = $hitungan_awal;
+            }
+            if ($cm >= 95.0 && $cm <= 104.9) {
+                $median = 13.9;
+                $hitungan_awal = $kg - $median;
+                $hasil = $hitungan_awal;
+            }
+            if ($cm >= 105.0 && $cm <= 110.0) {
+                $median = 16.5;
+                $hitungan_awal = $kg - $median;
+                $hasil = $hitungan_awal;
+            }
+            $hasil_pemeriksaan = Hasilpemeriksaan::where('data_id', $data->id)->first();
+            $update_hasil = $hasil_pemeriksaan->update([
+                'hasil_tinggi'           => $cm,
+                'hasil_zscore_tinggi'     => $hasil,
+                'updated_at'            => now()
+            ]);
+            return redirect()->route('hitung-tinggi-badan')->with('status', 'Perhitungan TB/U Telah berhasil.');
         }
     }
 
