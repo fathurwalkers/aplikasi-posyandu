@@ -90,7 +90,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 px-1">
-                    <a href="berat-badan.html" class="nav-link px-1 text-dark">
+                    <a href="{{ route('hitung-berat-badan') }}" class="nav-link px-1 text-dark">
                         <!-- card -->
                         <div class="card">
                             <div class="card-title text-center mb-0 pt-1 px-2 bg-success">

@@ -8,6 +8,7 @@ use App\Http\Controllers\MakananController;
 use App\Http\Controllers\BalitaController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\GenerateController;
+use App\Http\Controllers\PelayananController;
 
 Route::get('/', function () {
     return redirect()->route('login-admin');
@@ -31,6 +32,7 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
     // ====================================================================================================
     // CLIENT - USER
     Route::get('/', [ClientController::class, 'index'])->name('client-home');
+    Route::get('/hitung-berat-badan', [PelayananController::class, 'hitung_berat_badan'])->name('hitung-berat-badan');
     Route::get('/menu-admin', [ClientController::class, 'menu_admin'])->name('menu-admin');
     Route::get('/profile', [ClientController::class, 'profile'])->name('client-profile');
 
