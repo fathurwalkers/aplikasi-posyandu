@@ -39,6 +39,9 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
     Route::get('/hitung-tinggi-badan', [PelayananController::class, 'hitung_tinggi_badan'])->name('hitung-tinggi-badan');
     Route::post('/post-hitung-tinggi-badan', [PelayananController::class, 'post_hitung_tinggi_badan'])->name('post-hitung-tinggi-badan');
 
+    Route::get('/hitung-berat-tinggi-badan', [PelayananController::class, 'hitung_berat_tinggi_badan'])->name('hitung-berat-tinggi-badan');
+    Route::post('/post-hitung-berat-tinggi-badan', [PelayananController::class, 'post_hitung_berat_tinggi_badan'])->name('post-hitung-berat-tinggi-badan');
+
     Route::get('/menu-admin', [ClientController::class, 'menu_admin'])->name('menu-admin');
     Route::get('/profile', [ClientController::class, 'profile'])->name('client-profile');
 

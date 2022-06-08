@@ -90,12 +90,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 px-1">
-                    <form action="{{ route('post-hitung-berat-badan') }}" method="POST">
+                    <form action="{{ route('post-hitung-tinggi-badan') }}" method="POST">
                         @csrf
                         <div class="card px-1">
                             <div class="card-body">
                                 <div class="card-title text-center">
-                                    <p class="card-text">Pengguna Default</p>
+                                    <p class="card-text">{{ $data->data_nama_lengkap }}</p>
                                 </div>
                                 <div class="card-title d-flex justify-content-between mb-0">
                                     <p class="card-text my-auto" style="font-size: 14px; color: #b4b4b4">Jenis Kelamin</p>
@@ -138,36 +138,36 @@
                                     <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" name="cm" required>
                                 </div>
                             </div>
-                            <div class="card-body text-center px-1">
+                            {{-- <div class="card-body text-center px-1">
                                 <button class="btn btn-primary col-12 shadow-none fw-bold py-2 rounded-pill border-0" id="tujuan" style="background-color: #38b6ff;">Hitung Status Gizi Anak</button>
-                            </div>
+                            </div> --}}
                             <div class="col-12 d-flex justify-content-between mt-1 px-3">
                                 <h5>Z-Score</h5>
                                 <h5>{{ $hasil->hasil_zscore_tinggi }}</h5>
                             </div>
                             <div class="col-12 d-flex justify-content-between px-3">
-                                <h5>Status Gizi</h5>
+                                <h5>Status Tinggi</h5>
                                 @switch($hasil->hasil_zscore_tinggi)
                                 @case ($hasil->hasil_zscore_tinggi <= -3.0)
-                                    <h5>Gizi Sangat Buruk</h5>
+                                    <h5>Tinggi Sangat Pendek</h5>
                                     @break
                                 @case ($hasil->hasil_zscore_tinggi >= -3.0 && $hasil->hasil_zscore_tinggi <= -2.0)
-                                    <h5>Gizi Buruk</h5>
+                                    <h5>Tinggi Pendek</h5>
                                     @break
                                 @case ($hasil->hasil_zscore_tinggi >= -2.0 && $hasil->hasil_zscore_tinggi <= -1.0)
-                                    <h5>Gizi Mendekati Buruk</h5>
+                                    <h5>Tinggi Mendekati Pendek</h5>
                                     @break
                                 @case ($hasil->hasil_zscore_tinggi >= -1.0 && $hasil->hasil_zscore_tinggi <= 1.0)
-                                    <h5>Gizi Normal</h5>
+                                    <h5>Tinggi Normal</h5>
                                     @break
                                 @case ($hasil->hasil_zscore_tinggi >= 1.0 && $hasil->hasil_zscore_tinggi <= 2.0)
-                                    <h5>Gizi Mendekati Lebih</h5>
+                                    <h5>Tinggi Mendekati Lebih</h5>
                                     @break
                                 @case ($hasil->hasil_zscore_tinggi >= 2.0 && $hasil->hasil_zscore_tinggi <= 3.0)
-                                    <h5>Gizi Lebih</h5>
+                                    <h5>Tinggi Lebih</h5>
                                     @break
                                 @case ($hasil->hasil_zscore_tinggi >= 3.0)
-                                    <h5>Gizi Sangat Lebih</h5>
+                                    <h5>Tinggi Sangat Lebih</h5>
                                     @break
                                 @case (null)
                                     <h5>Belum melakukan Pengukuran</h5>
