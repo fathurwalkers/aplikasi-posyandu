@@ -28,7 +28,11 @@ class ClientController extends Controller
 
     public function index()
     {
-        return view('client.index');
+        $session_user = session('data_login');
+        $users = Login::find($session_user->id);
+        return view('client.index', [
+            'users' => $users
+        ]);
     }
 
     public function menu_admin()

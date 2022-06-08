@@ -146,6 +146,81 @@ class BackController extends Controller
 
     public function post_pengisian_data(Request $request)
     {
-        //
+        $session_user = session('data_login');
+        $users = Login::find($session_user->id);
+        if($users == null) {
+            return redirect()->route('client-home')->with('status', 'Maaf pengguna tidak ditemukan.');
+        } else {
+            $validatedData = $request->validate([
+                'data_foto'             => 'required',
+                'data_nama_lengkap'     => 'required',
+                'data_nama_orang_tua'   => 'required',
+                'data_alamat_lengkap'   => 'required',
+                'data_jenis_kelamin'    => 'required|filled',
+                'data_tanggal_lahir'    => 'required'
+            ]);
+
+            $date1 = strtotime($validatedData["data_tanggal_lahir"]);
+            $date2 = strtotime(now());
+            $totalbulan = 0;
+            while (($date1 = strtotime('+1 MONTH', $date1)) <= $date2) {
+                $totalbulan++;
+            }
+
+            if ($totalbulan < 38) {
+                $tipe                   = "BALITA";
+            } else {
+                $tipe                   = "ANAK";
+            }
+
+            $gambar_cek = $request->file('data_foto');
+            if (!$gambar_cek) {
+                $gambar_ori = $data->data_foto;
+                $gambar = $gambar_ori;
+            } else {
+                $ext = $request->file('data_foto')->getClientOriginalExtension();
+                $randomNamaGambar = strtolower(Str::random(10)) . "." .$ext;
+                $gambar_ori = $request->file('data_foto')->move(public_path('default-img/foto'), $randomNamaGambar);
+                $gambar = $randomNamaGambar;
+            }
+
+            $data = new Data;
+            $save_data = $data->create([
+                "data_foto"             => $gambar,
+                "data_nama_lengkap"     => $validatedData["data_nama_lengkap"],
+                "data_nama_orang_tua"   => $validatedData["data_nama_orang_tua"],
+                "data_alamat_lengkap"   => $validatedData["data_alamat_lengkap"],
+                "data_jenis_kelamin"    => $validatedData["data_jenis_kelamin"],
+                "data_tipe"             => $tipe,
+                "data_tanggal_lahir"    => $validatedData["data_tanggal_lahir"],
+                "created_at"            => now(),
+                "updated_at"            => now()
+            ]);
+            $save_data->save();
+            $users->update([
+                'data_id' => $save_data->id,
+                'updated_at' => now()
+            ]);
+
+            $hasil_pemeriksaan          = new Hasilpemeriksaan;
+            $save_hasil_pemeriksaan     = $hasil_pemeriksaan->create([
+                'hasil_umur_ukur'       => $totalbulan, // BULAN
+                'hasil_tanggal_lahir'   => $save_data->data_tanggal_lahir,
+                'hasil_berat'           => NULL,
+                'hasil_tinggi'          => NULL,
+
+                'hasil_zscore_berat'     => NULL,
+                'hasil_zscore_tinggi'    => NULL,
+                'hasil_zscore_berat_tinggi'    => NULL,
+
+                'data_id'               => $save_data->id,
+
+                'created_at'            => now(),
+                'updated_at'            => now()
+            ]);
+            $save_hasil_pemeriksaan->save();
+
+            return redirect()->route('client-home')->with('status', 'Pendaftaran dan Pengisian data telah berhasil.');
+        }
     }
 }

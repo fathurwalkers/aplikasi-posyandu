@@ -142,6 +142,10 @@
                                 <input type="text" class="form-control" name="data_alamat_lengkap" />
                             </div>
                             <div class="card-body bg-transparent">
+                                <p class="card-text">Tanggal Lahir</p>
+                                <input type="date" class="form-control" name="data_tanggal_lahir" />
+                            </div>
+                            <div class="card-body bg-transparent">
                                 <p class="card-text">Jenis Kelamin</p>
                                 <select id="data_jenis_kelamin" class="form-control" name="data_jenis_kelamin">
                                     <option selected>
