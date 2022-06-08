@@ -29,7 +29,6 @@ class PelayananController extends Controller
     {
         $session_user = session('data_login');
         $login = Login::find($session_user->id);
-        dd($login);
         $data = Data::find($login->data_id);
         if ($login == null) {
             return redirect()->route('client-home')->with('status', 'Maaf, anda tidak meliki ke halaman ini');
@@ -103,7 +102,7 @@ class PelayananController extends Controller
                 $median = 9.4;
                 $hitungan = $kg - $median;
                 $hasil = intval($hitungan);
-            } elseif ($bulan >= 12 && $bulan <= 26) {
+            } elseif ($bulan >= 12 && $bulan <= 60) {
                 $median = 12.5;
                 $hitungan = $kg - $median;
                 $hasil = intval($hitungan);
