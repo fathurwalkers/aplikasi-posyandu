@@ -134,12 +134,19 @@
                                     <p class="card-text my-auto" style="font-size: 14px; color: #b4b4b4">Berat(kg)</p>
                                     <i class="fa fa-weight my-auto"></i>
                                 </div>
+                                <div class="mb-3 card-title">
+                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" required>
+                                </div>
+                                <div class="card-title d-flex justify-content-between mb-0">
+                                    <p class="card-text my-auto" style="font-size: 14px; color: #b4b4b4">Tinggi(Cm)</p>
+                                    <i class="fa fa-ruler-vertical my-auto"></i>
+                                </div>
                                 <div class="mb-0 card-title">
-                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" name="kg" required>
+                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" required>
                                 </div>
                             </div>
                             {{-- <div class="card-body text-center px-1">
-                                <button class="btn btn-primary col-12 shadow-none fw-bold py-2 rounded-pill border-0" id="tujuan" style="background-color: #38b6ff;">Hitung Status Gizi Anak</button>
+                                <button type="submit" class="btn btn-primary col-12 shadow-none fw-bold py-2 rounded-pill border-0" id="tujuan" style="background-color: #38b6ff;">Hitung Status Gizi Anak</button>
                             </div> --}}
                             <div class="col-12 d-flex justify-content-between mt-1 px-3">
                                 <h5>Z-Score</h5>
