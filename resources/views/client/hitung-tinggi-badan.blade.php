@@ -89,6 +89,15 @@
     <section class="profile mt-5" id="profile">
         <div class="container">
             <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-12 px-1">
                     <form action="{{ route('post-hitung-tinggi-badan') }}" method="POST">
                         @csrf
@@ -143,7 +152,11 @@
                             </div> --}}
                             <div class="col-12 d-flex justify-content-between mt-1 px-3">
                                 <h5>Z-Score</h5>
-                                <h5>{{ $hasil->hasil_zscore_tinggi }}</h5>
+                                @if ($hasil->hasil_zscore_tinggi == null)
+                                    <h5>Belum Melakukan Pengukuran</h5>
+                                @else
+                                    <h5>{{ $hasil->hasil_zscore_tinggi }}</h5>
+                                @endif
                             </div>
                             <div class="col-12 d-flex justify-content-between px-3">
                                 <h5>Status Tinggi</h5>

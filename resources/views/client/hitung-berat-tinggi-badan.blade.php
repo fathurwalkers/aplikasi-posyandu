@@ -89,6 +89,15 @@
     <section class="profile mt-5" id="profile">
         <div class="container">
             <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-12 px-1">
                     <form action="{{ route('post-hitung-berat-tinggi-badan') }}" method="POST">
                         @csrf
@@ -135,14 +144,14 @@
                                     <i class="fa fa-weight my-auto"></i>
                                 </div>
                                 <div class="mb-3 card-title">
-                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" required step="any" name="kg">
+                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" required name="kg">
                                 </div>
                                 <div class="card-title d-flex justify-content-between mb-0">
                                     <p class="card-text my-auto" style="font-size: 14px; color: #b4b4b4">Tinggi(Cm)</p>
                                     <i class="fa fa-ruler-vertical my-auto"></i>
                                 </div>
                                 <div class="mb-0 card-title">
-                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" required step="any" name="cm">
+                                    <input type="text" class="form-control border-0 border-bottom border-2 rounded-0 shadow-none px-0 input" required name="cm">
                                 </div>
                             </div>
                             {{-- <div class="card-body text-center px-1">
@@ -150,31 +159,35 @@
                             </div> --}}
                             <div class="col-12 d-flex justify-content-between mt-1 px-3">
                                 <h5>Z-Score</h5>
-                                <h5>{{ $hasil->hasil_zscore_berat }}</h5>
+                                @if ($hasil->hasil_zscore_berat_tinggi == null)
+                                    <h5>Belum Melakukan Pengukuran</h5>
+                                @else
+                                    <h5>{{ $hasil->hasil_zscore_berat_tinggi }}</h5>
+                                @endif
                             </div>
                             <div class="col-12 d-flex justify-content-between px-3">
                                 <h5>Status Gizi</h5>
-                                @switch($hasil->hasil_zscore_berat)
-                                @case ($hasil->hasil_zscore_berat <= -3.0)
-                                    <h5>Gizi Sangat Buruk</h5>
+                                @switch($hasil->hasil_zscore_berat_tinggi)
+                                @case ($hasil->hasil_zscore_berat_tinggi <= -3.0)
+                                    <h5>Sangat Kurus</h5>
                                     @break
-                                @case ($hasil->hasil_zscore_berat >= -3.0 && $hasil->hasil_zscore_berat <= -2.0)
-                                    <h5>Gizi Buruk</h5>
+                                @case ($hasil->hasil_zscore_berat_tinggi >= -3.0 && $hasil->hasil_zscore_berat_tinggi <= -2.0)
+                                    <h5>Kurus</h5>
                                     @break
-                                @case ($hasil->hasil_zscore_berat >= -2.0 && $hasil->hasil_zscore_berat <= -1.0)
-                                    <h5>Gizi Mendekati Buruk</h5>
+                                @case ($hasil->hasil_zscore_berat_tinggi >= -2.0 && $hasil->hasil_zscore_berat_tinggi <= -1.0)
+                                    <h5>Mendekati Kurus</h5>
                                     @break
-                                @case ($hasil->hasil_zscore_berat >= -1.0 && $hasil->hasil_zscore_berat <= 1.0)
-                                    <h5>Gizi Normal</h5>
+                                @case ($hasil->hasil_zscore_berat_tinggi >= -1.0 && $hasil->hasil_zscore_berat_tinggi <= 1.0)
+                                    <h5>Normal</h5>
                                     @break
-                                @case ($hasil->hasil_zscore_berat >= 1.0 && $hasil->hasil_zscore_berat <= 2.0)
-                                    <h5>Gizi Mendekati Lebih</h5>
+                                @case ($hasil->hasil_zscore_berat_tinggi >= 1.0 && $hasil->hasil_zscore_berat_tinggi <= 2.0)
+                                    <h5>Mendekati Gemuk</h5>
                                     @break
-                                @case ($hasil->hasil_zscore_berat >= 2.0 && $hasil->hasil_zscore_berat <= 3.0)
-                                    <h5>Gizi Lebih</h5>
+                                @case ($hasil->hasil_zscore_berat_tinggi >= 2.0 && $hasil->hasil_zscore_berat_tinggi <= 3.0)
+                                    <h5>Gemuk</h5>
                                     @break
-                                @case ($hasil->hasil_zscore_berat >= 3.0)
-                                    <h5>Gizi Sangat Lebih</h5>
+                                @case ($hasil->hasil_zscore_berat_tinggi >= 3.0)
+                                    <h5>Sangat Gemuk</h5>
                                     @break
                                 @case (null)
                                     <h5>Belum melakukan Pengukuran</h5>
