@@ -94,7 +94,7 @@
                     </div>
                 </div>
             </a>
-            <a href="{{ asset('tampilan') }}/profil-grafik.html"
+            <a href="{{ route('menu-grafik') }}"
                 class="card mb-3 text-decoration-none grafik text-white p-0">
                 <div class="row g-0">
                     <div class="col-8">

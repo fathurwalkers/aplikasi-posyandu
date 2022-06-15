@@ -305,13 +305,44 @@ class PelayananController extends Controller
         ]);
     }
 
-    public function grafik_pertumbuhan()
+    public function menu_grafik()
+    {
+        return view('client.menu-grafik');
+    }
+
+    public function grafik_berat()
     {
         $session_user = session('data_login');
         $users = Login::find($session_user->id);
         $data = Data::find($users->data_id);
         $hasil_pemeriksaan = Hasilpemeriksaan::where('data_id', $data->id)->first();
-        return view('client.grafik-pertumbuhan', [
+        return view('client.grafik-berat', [
+            'users' => $users,
+            'data' => $data,
+            'hasil_pemeriksaan' => $hasil_pemeriksaan,
+        ]);
+    }
+
+    public function grafik_tinggi()
+    {
+        $session_user = session('data_login');
+        $users = Login::find($session_user->id);
+        $data = Data::find($users->data_id);
+        $hasil_pemeriksaan = Hasilpemeriksaan::where('data_id', $data->id)->first();
+        return view('client.grafik-tinggi', [
+            'users' => $users,
+            'data' => $data,
+            'hasil_pemeriksaan' => $hasil_pemeriksaan,
+        ]);
+    }
+
+    public function grafik_berat_tinggi()
+    {
+        $session_user = session('data_login');
+        $users = Login::find($session_user->id);
+        $data = Data::find($users->data_id);
+        $hasil_pemeriksaan = Hasilpemeriksaan::where('data_id', $data->id)->first();
+        return view('client.grafik-berat-tinggi', [
             'users' => $users,
             'data' => $data,
             'hasil_pemeriksaan' => $hasil_pemeriksaan,

@@ -16,47 +16,41 @@
             background-image: linear-gradient(to left, #90d4fc, #38b6ff);
             z-index: 3;
         }
-        
+
         .berat-badan .title-text {
             font-size: 20px;
         }
-        
+
         .berat-badan i {
             font-size: 19px;
         }
-        
+
         .daftar {
             min-height: 100%;
             padding: 50px 0 70px 0;
         }
-        
+
         .daftar .card {
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.178);
         }
-        
+
         .card .childIcon {
             width: 60px;
             height: 60px;
             /* border: 3px solid black; */
         }
-        
+
         .profile .card .card-title .card-text {
             font-size: 17px;
         }
-        
+
         .backdrop.active {
             display: block;
         }
-        
+
         .profile i {
             font-size: 20px;
-        }
-        
-        .card-body:nth-child(even) {
-            margin-left: 5%;
-            margin-right: 30px;
-            background-color: rgba(43, 255, 0, 0.26);
         }
     </style>
 </head>
@@ -67,7 +61,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 d-flex mx-auto border-0 my-auto py-2 headerTop">
-                    <a href="menu-grafik.html" class="card-title text-white mb-0 py-1 my-auto">
+                    <a href="{{ route('menu-grafik') }}" class="card-title text-white mb-0 py-1 my-auto">
                         <i class="fa fa-arrow-left mb-0"></i>
                     </a>
                     <p class="title-text text-white fw-bold my-auto py-1 col-11 text-center">Grafik Pertumbuhan</p>
@@ -84,27 +78,44 @@
                 <div class="col-12 px-0">
                     <form action="">
 
-                        <div class="card px-1 rounded-0 mb-3 border-0" style="background-image: linear-gradient(to left, #90d4fc, #38b6ff);">
+                        <div class="card px-1 rounded-0 border-0" style="background-image: linear-gradient(to left, #90d4fc, #38b6ff);">
                             <div class="card-body">
                                 <div class="card-title text-center text-white fw-bold">
-                                    <p class="card-text">Pengguna Default</p>
+                                    <p class="card-text">{{ $data->data_nama_lengkap }}</p>
                                 </div>
                                 <div class="card-title d-flex justify-content-between mb-0">
                                     <p class="card-text my-auto" style="font-size: 14px; color: rgba(255, 255, 255, 0.692)">Jenis Kelamin</p>
                                     <div class="icon text-white">
-                                        <i class="fa fa-male my-auto"></i>
-                                        <i class="fa fa-female my-auto"></i>
+                                        @switch($data->data_jenis_kelamin)
+                                            @case('L')
+                                                <i class="fa fa-male my-auto"></i>
+                                                @break
+                                            @case('P')
+                                                <i class="fa fa-female my-auto"></i>
+                                                @break
+                                        @endswitch
                                     </div>
                                 </div>
                                 <div class="card-title fw-bold text-white">
-                                    <p class="card-text">Laki-Laki</p>
+                                    <p class="card-text">
+                                        @switch($data->data_jenis_kelamin)
+                                            @case('L')
+                                                Laki - Laki
+                                                @break
+                                            @case('P')
+                                                Perempuan
+                                                @break
+                                        @endswitch
+                                    </p>
                                 </div>
                                 <div class="card-title d-flex justify-content-between mb-0">
                                     <p class="card-text my-auto" style="font-size: 14px; color: rgba(255, 255, 255, 0.692)">Tanggal Lahir</p>
                                     <i class="fa fa-birthday-cake my-auto text-white"></i>
                                 </div>
                                 <div class="card-title fw-bold text-white">
-                                    <p class="card-text">31-08-2021</p>
+                                    <p class="card-text">
+                                        {{ date("d-m-Y", strtotime($data->data_tanggal_lahir)) }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
