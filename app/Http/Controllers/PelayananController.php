@@ -289,4 +289,19 @@ class PelayananController extends Controller
             return redirect()->route('hitung-berat-badan')->with('status', 'Perhitungan BB/U Telah berhasil.');
         }
     }
+
+    // =========================================================
+
+    public function status_gizi()
+    {
+        $session_user = session('data_login');
+        $users = Login::find($session_user->id);
+        $data = Data::find($users->data_id);
+        $hasil_pemeriksaan = Hasilpemeriksaan::where('data_id', $data->id)->first();
+        return view('client.status-gizi', [
+            'users' => $users,
+            'data' => $data,
+            'hasil_pemeriksaan' => $hasil_pemeriksaan,
+        ]);
+    }
 }

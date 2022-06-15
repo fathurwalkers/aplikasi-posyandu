@@ -22,6 +22,16 @@
     <section id="content" class="content py-5 d-flex justify-content-center align-items-center" style="min-height: 100%">
         <div class="container">
 
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                </div>
+            </div>
+
             @if ($users->data_id == null)
             <a href="{{ route('pengisian-data') }}"
                 class="card mb-3 text-decoration-none status-gizi text-white p-0">
@@ -98,7 +108,7 @@
                     </div>
                 </div>
             </a>
-            <a href="{{ asset('tampilan') }}/status-gizi-anak.html"
+            <a href="{{ route('status-gizi') }}"
                 class="card mb-3 text-decoration-none status-gizi text-white p-0">
                 <div class="row g-0">
                     <div class="col-8">
