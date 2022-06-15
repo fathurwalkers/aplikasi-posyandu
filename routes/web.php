@@ -40,7 +40,7 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
     Route::post('/post-hitung-berat-badan', [PelayananController::class, 'post_hitung_berat_badan'])->name('post-hitung-berat-badan');
 
     Route::get('/status-gizi', [PelayananController::class, 'status_gizi'])->name('status-gizi');
-
+    Route::get('/grafik-pertumbuhan', [PelayananController::class, 'grafik_pertumbuhan'])->name('grafik-pertumbuhan');
 
     Route::get('/hitung-tinggi-badan', [PelayananController::class, 'hitung_tinggi_badan'])->name('hitung-tinggi-badan');
     Route::post('/post-hitung-tinggi-badan', [PelayananController::class, 'post_hitung_tinggi_badan'])->name('post-hitung-tinggi-badan');

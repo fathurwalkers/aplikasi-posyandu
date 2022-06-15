@@ -304,4 +304,17 @@ class PelayananController extends Controller
             'hasil_pemeriksaan' => $hasil_pemeriksaan,
         ]);
     }
+
+    public function grafik_pertumbuhan()
+    {
+        $session_user = session('data_login');
+        $users = Login::find($session_user->id);
+        $data = Data::find($users->data_id);
+        $hasil_pemeriksaan = Hasilpemeriksaan::where('data_id', $data->id)->first();
+        return view('client.grafik-pertumbuhan', [
+            'users' => $users,
+            'data' => $data,
+            'hasil_pemeriksaan' => $hasil_pemeriksaan,
+        ]);
+    }
 }
