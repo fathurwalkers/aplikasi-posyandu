@@ -296,6 +296,11 @@ class PelayananController extends Controller
     {
         $session_user = session('data_login');
         $users = Login::find($session_user->id);
+        if ($users->login_level == 'admin') {
+            return redirect()->route('client-home')->with('status', 'Maaf, admin tidak dapat melakukan aksi ini, hanya pengguna yang dapat melakukan pemeriksaan.');
+        }
+        $session_user = session('data_login');
+        $users = Login::find($session_user->id);
         $data = Data::find($users->data_id);
         $hasil_pemeriksaan = Hasilpemeriksaan::where('data_id', $data->id)->first();
         return view('client.status-gizi', [
@@ -307,6 +312,11 @@ class PelayananController extends Controller
 
     public function menu_grafik()
     {
+        $session_user = session('data_login');
+        $users = Login::find($session_user->id);
+        if ($users->login_level == 'admin') {
+            return redirect()->route('client-home')->with('status', 'Maaf, admin tidak dapat melakukan aksi ini, hanya pengguna yang dapat melakukan pemeriksaan.');
+        }
         return view('client.menu-grafik');
     }
 

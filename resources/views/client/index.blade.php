@@ -80,7 +80,7 @@
                         </div>
                     </div>
                 </a>
-                @if ($users->login_level == 'pengguna')
+                {{-- @if ($users->login_level == 'pengguna') --}}
                 <a href="{{ route('client-menu-hitung-gizi') }}"
                 class="card mb-3 text-decoration-none hitung-gizi text-white p-0">
                     <div class="row g-0">
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                 </a>
-                @endif
+                {{-- @endif --}}
             @endif
 
         </div>
